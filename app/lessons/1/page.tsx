@@ -149,59 +149,59 @@ function QuestionCard({
 export default function LessonOnePage() {
   return (
     <main className="min-h-screen bg-white text-black">
-      <article className="mx-auto max-w-6xl px-6 pb-20 pt-10 lg:px-8">
-        {/* ======================================================
-            LESSON HEADER
-        ====================================================== */}
+      {/* ======================================================
+          FULL-WIDTH LESSON HEADER
+      ====================================================== */}
 
-        <header className="mb-12 overflow-hidden rounded-2xl border border-[#17452a] bg-[#276749] text-white shadow-sm">
-          <div className="relative px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
-            <div
-              aria-hidden="true"
-              className="absolute right-0 top-0 h-64 w-64 rounded-full bg-white/10 blur-3xl"
-            />
+      <header className="relative overflow-hidden border-b border-[#17452a] bg-[#276749] text-white">
+        <div
+          aria-hidden="true"
+          className="absolute right-0 top-0 h-64 w-64 rounded-full bg-white/10 blur-3xl"
+        />
 
-            <div className="relative">
-              <p className="mb-3 font-bold uppercase tracking-[0.18em] text-white/80">
-                Quickbase Automation Developer Lab
-              </p>
+        <div className="relative mx-auto max-w-6xl px-6 py-12 lg:px-8 lg:py-14">
+          <p className="mb-3 font-bold uppercase tracking-[0.18em] text-white/80">
+            Quickbase Automation Developer Lab
+          </p>
 
-              <p className="mb-2 text-lg font-semibold text-white/90">
-                Lesson 1
-              </p>
+          <p className="mb-2 text-lg font-semibold text-white/90">
+            Lesson 1
+          </p>
 
-              <h1 className="max-w-4xl text-4xl font-extrabold leading-tight sm:text-5xl">
-                The Automation Landscape
-              </h1>
+          <h1 className="max-w-4xl text-4xl font-extrabold leading-tight sm:text-5xl">
+            The Automation Landscape
+          </h1>
 
-              <p className="mt-6 max-w-4xl text-xl leading-9 text-white">
-                Before configuring notifications, reminders, subscriptions,
-                Custom Emails, or Pipelines, we need a vocabulary for describing
-                what Quickbase automation is actually doing.
-              </p>
+          <p className="mt-6 max-w-4xl text-xl leading-9 text-white">
+            Before configuring notifications, reminders, subscriptions, Custom
+            Emails, or Pipelines, we need a vocabulary for describing what
+            Quickbase automation is actually doing.
+          </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href="/lessons"
-                  className="inline-flex rounded-lg bg-white px-5 py-3 font-bold text-[#276749] transition hover:-translate-y-0.5 hover:bg-[#f0fff4]"
-                >
-                  Table of Contents
-                </Link>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/lessons"
+              className="inline-flex rounded-lg bg-white px-5 py-3 font-bold text-[#276749] transition hover:-translate-y-0.5 hover:bg-[#f0fff4]"
+            >
+              Table of Contents
+            </Link>
 
-                <Link
-                  href="/lessons/2"
-                  className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#276749]"
-                >
-                  Next Lesson →
-                </Link>
-              </div>
-            </div>
+            <Link
+              href="/lessons/2"
+              className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#276749]"
+            >
+              Next Lesson →
+            </Link>
           </div>
-        </header>
+        </div>
+      </header>
 
-        {/* ======================================================
-            CENTRAL QUESTION
-        ====================================================== */}
+      {/* ======================================================
+          CONSTRAINED LESSON CONTENT
+      ====================================================== */}
+
+      <article className="mx-auto max-w-6xl px-6 pb-20 pt-10 lg:px-8">
+        {/* Central Question */}
 
         <section className="mb-14">
           <QuestionCard question="What does “automation” actually mean inside Quickbase?">
@@ -223,10 +223,6 @@ export default function LessonOnePage() {
             </p>
           </QuestionCard>
         </section>
-
-        {/* ======================================================
-            COURSE PREMISE
-        ====================================================== */}
 
         <section className="mb-14">
           <SectionHeading
@@ -789,7 +785,9 @@ YOUR APP DOES SOMETHING
             </div>
           </div>
         </section>
+
       </article>
     </main>
   );
-}
+}    
+
