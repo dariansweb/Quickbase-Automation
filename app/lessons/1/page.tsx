@@ -1,4 +1,25 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
+import {
+  LuArrowDown,
+  LuBell,
+  LuBookOpen,
+  LuCalendarClock,
+  LuCheck,
+  LuCircleHelp,
+  LuClock3,
+  LuDatabase,
+  LuGitBranch,
+  LuLightbulb,
+  LuMail,
+  LuMessageSquare,
+  LuRefreshCw,
+  LuRocket,
+  LuRoute,
+  LuSend,
+  LuWorkflow,
+  LuZap,
+} from "react-icons/lu";
 
 /* ============================================================
    REUSABLE LESSON COMPONENTS
@@ -7,11 +28,13 @@ import Link from "next/link";
 function SectionHeading({
   eyebrow,
   title,
+  icon,
   children,
 }: {
   eyebrow?: string;
   title: string;
-  children?: React.ReactNode;
+  icon?: ReactNode;
+  children?: ReactNode;
 }) {
   return (
     <div className="mb-6">
@@ -21,25 +44,47 @@ function SectionHeading({
         </p>
       )}
 
-      <h2 className="text-3xl font-bold text-[#205c38] sm:text-4xl">{title}</h2>
+      <div className="flex items-start gap-4">
+        {icon && (
+          <span className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#e6f4ea] text-2xl text-[#276749]">
+            {icon}
+          </span>
+        )}
 
-      {children && (
-        <div className="mt-4 max-w-4xl text-lg leading-8">{children}</div>
-      )}
+        <div>
+          <h2 className="text-3xl font-bold text-[#205c38] sm:text-4xl">
+            {title}
+          </h2>
+
+          {children && (
+            <div className="mt-4 max-w-4xl text-lg leading-8">{children}</div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
 
 function ConceptCard({
   title,
+  icon,
   children,
 }: {
   title: string;
-  children: React.ReactNode;
+  icon?: ReactNode;
+  children: ReactNode;
 }) {
   return (
-    <div className="rounded-xl border border-gray-300 bg-white p-6 shadow-sm">
-      <h3 className="text-xl font-bold text-[#205c38]">{title}</h3>
+    <div className="group rounded-xl border border-gray-300 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#9fc9ad] hover:shadow-md">
+      <div className="flex items-start gap-4">
+        {icon && (
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#f0fff4] text-xl text-[#276749] transition-transform duration-200 group-hover:scale-105">
+            {icon}
+          </span>
+        )}
+
+        <h3 className="pt-1 text-xl font-bold text-[#205c38]">{title}</h3>
+      </div>
 
       <div className="mt-4 leading-8">{children}</div>
     </div>
@@ -49,22 +94,34 @@ function ConceptCard({
 function VocabularyCard({
   term,
   subtitle,
+  icon,
   children,
 }: {
   term: string;
   subtitle?: string;
-  children: React.ReactNode;
+  icon?: ReactNode;
+  children: ReactNode;
 }) {
   return (
-    <div className="rounded-xl border border-gray-300 bg-white p-6 shadow-sm">
-      <div className="flex flex-wrap items-center gap-3">
-        <h3 className="text-2xl font-bold text-[#205c38]">{term}</h3>
-
-        {subtitle && (
-          <span className="rounded-full bg-[#e6f4ea] px-3 py-1 text-sm font-bold text-[#276749]">
-            {subtitle}
+    <div className="group rounded-xl border border-gray-300 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#9fc9ad] hover:shadow-md">
+      <div className="flex items-start gap-4">
+        {icon && (
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f0fff4] text-2xl text-[#276749] transition-transform duration-200 group-hover:scale-105">
+            {icon}
           </span>
         )}
+
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-3">
+            <h3 className="text-2xl font-bold text-[#205c38]">{term}</h3>
+
+            {subtitle && (
+              <span className="rounded-full bg-[#e6f4ea] px-3 py-1 text-sm font-bold text-[#276749]">
+                {subtitle}
+              </span>
+            )}
+          </div>
+        </div>
       </div>
 
       <div className="mt-4 leading-8 text-gray-800">{children}</div>
@@ -77,45 +134,111 @@ function MentalModel({
   children,
 }: {
   title?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
-    <div className="my-8 overflow-hidden rounded-xl border-2 border-[#276749] bg-[#f0fff4]">
+    <div className="my-8 overflow-hidden rounded-2xl border-2 border-[#9fc9ad] bg-[#f0fff4]">
       {title && (
-        <div className="border-b border-[#9fc9ad] bg-[#e6f4ea] px-6 py-4">
-          <p className="font-bold uppercase tracking-[0.12em] text-[#276749]">
-            Mental Model
-          </p>
+        <div className="border-b border-[#9fc9ad] bg-[#e6f4ea] px-6 py-5">
+          <div className="flex items-center gap-3">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-xl text-[#276749] shadow-sm">
+              <LuRoute aria-hidden="true" />
+            </span>
 
-          <h3 className="mt-1 text-xl font-bold text-[#205c38]">{title}</h3>
+            <div>
+              <p className="font-bold uppercase tracking-[0.12em] text-[#276749]">
+                Mental Model
+              </p>
+
+              <h3 className="mt-1 text-xl font-bold text-[#205c38]">{title}</h3>
+            </div>
+          </div>
         </div>
       )}
 
-      <div className="overflow-x-auto p-6">
-        <pre className="min-w-max font-mono text-[15px] leading-8 sm:text-base">
-          {children}
-        </pre>
+      <div className="p-6 sm:p-7">{children}</div>
+    </div>
+  );
+}
+
+function FlowArrow() {
+  return (
+    <div className="flex h-10 items-center justify-center">
+      <LuArrowDown aria-hidden="true" className="text-xl text-[#276749]/60" />
+    </div>
+  );
+}
+
+function FlowStep({
+  icon,
+  title,
+  description,
+  final = false,
+}: {
+  icon: ReactNode;
+  title: string;
+  description?: string;
+  final?: boolean;
+}) {
+  return (
+    <div
+      className={`w-full rounded-xl border p-4 shadow-sm ${
+        final
+          ? "border-[#276749] bg-[#276749] text-white"
+          : "border-[#b7d8c2] bg-white"
+      }`}
+    >
+      <div className="flex items-start gap-4">
+        <span
+          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-xl ${
+            final ? "bg-white/15 text-white" : "bg-[#f0fff4] text-[#276749]"
+          }`}
+        >
+          {icon}
+        </span>
+
+        <div>
+          <h4
+            className={`font-extrabold ${
+              final ? "text-white" : "text-[#205c38]"
+            }`}
+          >
+            {title}
+          </h4>
+
+          {description && (
+            <p
+              className={`mt-1 text-sm leading-6 ${
+                final ? "text-white/85" : "text-gray-600"
+              }`}
+            >
+              {description}
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
 }
 
-function Remember({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
+function Remember({ title, children }: { title: string; children: ReactNode }) {
   return (
     <div className="my-8 rounded-xl border-2 border-[#d4a72c] bg-[#fffaf0] p-6">
-      <p className="font-bold uppercase tracking-[0.12em] text-[#7a5200]">
-        Remember This
-      </p>
+      <div className="flex items-start gap-4">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white text-xl text-[#7a5200] shadow-sm">
+          <LuLightbulb aria-hidden="true" />
+        </span>
 
-      <h3 className="mt-2 text-xl font-bold">{title}</h3>
+        <div>
+          <p className="font-bold uppercase tracking-[0.12em] text-[#7a5200]">
+            Remember This
+          </p>
 
-      <div className="mt-3 leading-8">{children}</div>
+          <h3 className="mt-2 text-xl font-bold">{title}</h3>
+        </div>
+      </div>
+
+      <div className="mt-4 leading-8">{children}</div>
     </div>
   );
 }
@@ -125,17 +248,25 @@ function QuestionCard({
   children,
 }: {
   question: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <div className="rounded-xl border-2 border-[#9fc9ad] bg-[#f0fff4] p-6">
-      <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#276749]">
-        Central Question
-      </p>
+      <div className="flex items-start gap-4">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-2xl text-[#276749] shadow-sm">
+          <LuCircleHelp aria-hidden="true" />
+        </span>
 
-      <h2 className="mt-2 text-2xl font-bold text-[#205c38] sm:text-3xl">
-        {question}
-      </h2>
+        <div>
+          <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#276749]">
+            Central Question
+          </p>
+
+          <h2 className="mt-2 text-2xl font-bold text-[#205c38] sm:text-3xl">
+            {question}
+          </h2>
+        </div>
+      </div>
 
       <div className="mt-4 max-w-4xl text-lg leading-8">{children}</div>
     </div>
@@ -164,9 +295,7 @@ export default function LessonOnePage() {
             Quickbase Automation Developer Lab
           </p>
 
-          <p className="mb-2 text-lg font-semibold text-white/90">
-            Lesson 1
-          </p>
+          <p className="mb-2 text-lg font-semibold text-white/90">Lesson 1</p>
 
           <h1 className="max-w-4xl text-4xl font-extrabold leading-tight sm:text-5xl">
             The Automation Landscape
@@ -228,6 +357,7 @@ export default function LessonOnePage() {
           <SectionHeading
             eyebrow="Course Premise"
             title="Start With the Event, Not the Button"
+            icon={<LuZap aria-hidden="true" />}
           >
             <p>
               This course will not begin by memorizing where Quickbase places
@@ -241,14 +371,20 @@ export default function LessonOnePage() {
           </SectionHeading>
 
           <div className="grid gap-5 md:grid-cols-3">
-            <ConceptCard title="1. What happened?">
+            <ConceptCard
+              title="1. What happened?"
+              icon={<LuZap aria-hidden="true" />}
+            >
               <p>
                 Did a record change? Did a date arrive? Did a schedule run? Did
                 something external occur?
               </p>
             </ConceptCard>
 
-            <ConceptCard title="2. What does Quickbase know?">
+            <ConceptCard
+              title="2. What does Quickbase know?"
+              icon={<LuDatabase aria-hidden="true" />}
+            >
               <p>
                 Does Quickbase know merely that a record changed, which field
                 changed, the record&apos;s current state, or something about its
@@ -256,7 +392,10 @@ export default function LessonOnePage() {
               </p>
             </ConceptCard>
 
-            <ConceptCard title="3. What should happen next?">
+            <ConceptCard
+              title="3. What should happen next?"
+              icon={<LuWorkflow aria-hidden="true" />}
+            >
               <p>
                 Should someone receive information, should another record
                 change, should data be queried, or should an entire workflow
@@ -266,21 +405,56 @@ export default function LessonOnePage() {
           </div>
 
           <MentalModel title="The progression of the course">
-            {`INFORMATION
-    ↓
-COMMUNICATION
-    ↓
-EVENTS
-    ↓
-TIME
-    ↓
-CONDITIONS
-    ↓
-STATE CHANGES
-    ↓
-WORKFLOW
-    ↓
-PIPELINES`}
+            <div className="mx-auto flex max-w-2xl flex-col items-center">
+              <FlowStep
+                icon={<LuDatabase aria-hidden="true" />}
+                title="Information"
+                description="Automation begins with data and record values."
+              />
+              <FlowArrow />
+              <FlowStep
+                icon={<LuMessageSquare aria-hidden="true" />}
+                title="Communication"
+                description="Quickbase can communicate information to people."
+              />
+              <FlowArrow />
+              <FlowStep
+                icon={<LuZap aria-hidden="true" />}
+                title="Events"
+                description="Something happens that gives the system a reason to react."
+              />
+              <FlowArrow />
+              <FlowStep
+                icon={<LuClock3 aria-hidden="true" />}
+                title="Time"
+                description="Dates and schedules introduce another kind of cause."
+              />
+              <FlowArrow />
+              <FlowStep
+                icon={<LuGitBranch aria-hidden="true" />}
+                title="Conditions"
+                description="Rules determine whether an action should occur."
+              />
+              <FlowArrow />
+              <FlowStep
+                icon={<LuRefreshCw aria-hidden="true" />}
+                title="State Changes"
+                description="Records move from one meaningful state to another."
+              />
+              <FlowArrow />
+              <FlowStep
+                icon={<LuWorkflow aria-hidden="true" />}
+                title="Workflow"
+                description="Events, conditions, and actions become an organized process."
+              />
+              <FlowArrow />
+              <FlowStep
+                icon={<LuRocket aria-hidden="true" />}
+                title="Pipelines"
+                description="The earlier concepts converge into multi-step automation."
+                final
+              />
+            </div>
           </MentalModel>
 
           <p className="max-w-4xl text-lg leading-8">
@@ -298,6 +472,7 @@ PIPELINES`}
           <SectionHeading
             eyebrow="Vocabulary"
             title="The Main Automation Terms You Will Encounter"
+            icon={<LuBookOpen aria-hidden="true" />}
           >
             <p>
               Quickbase automation terminology has evolved over time. Some
@@ -312,7 +487,11 @@ PIPELINES`}
           </SectionHeading>
 
           <div className="grid gap-5 lg:grid-cols-2">
-            <VocabularyCard term="Alerts" subtitle="Platform communication">
+            <VocabularyCard
+              term="Alerts"
+              subtitle="Platform communication"
+              icon={<LuBell aria-hidden="true" />}
+            >
               <p>
                 Alerts are Quickbase-generated communications associated with
                 the platform or application environment.
@@ -324,7 +503,11 @@ PIPELINES`}
               </p>
             </VocabularyCard>
 
-            <VocabularyCard term="Notifications" subtitle="Legacy">
+            <VocabularyCard
+              term="Notifications"
+              subtitle="Legacy"
+              icon={<LuMail aria-hidden="true" />}
+            >
               <p>
                 Notifications are legacy event-driven automatic emails that
                 respond to record activity.
@@ -336,7 +519,11 @@ PIPELINES`}
               </p>
             </VocabularyCard>
 
-            <VocabularyCard term="Reminders" subtitle="Legacy">
+            <VocabularyCard
+              term="Reminders"
+              subtitle="Legacy"
+              icon={<LuClock3 aria-hidden="true" />}
+            >
               <p>
                 Reminders are legacy automatic emails driven primarily by dates
                 stored in Quickbase records.
@@ -348,7 +535,11 @@ PIPELINES`}
               </p>
             </VocabularyCard>
 
-            <VocabularyCard term="Subscriptions" subtitle="Report delivery">
+            <VocabularyCard
+              term="Subscriptions"
+              subtitle="Report delivery"
+              icon={<LuSend aria-hidden="true" />}
+            >
               <p>
                 Subscriptions deliver report information according to a
                 schedule.
@@ -361,7 +552,11 @@ PIPELINES`}
               </p>
             </VocabularyCard>
 
-            <VocabularyCard term="Custom Emails" subtitle="Modern">
+            <VocabularyCard
+              term="Custom Emails"
+              subtitle="Modern"
+              icon={<LuMessageSquare aria-hidden="true" />}
+            >
               <p>
                 Custom Emails are the newer Quickbase automatic-email system.
               </p>
@@ -372,7 +567,11 @@ PIPELINES`}
               </p>
             </VocabularyCard>
 
-            <VocabularyCard term="Pipelines" subtitle="Workflow automation">
+            <VocabularyCard
+              term="Pipelines"
+              subtitle="Workflow automation"
+              icon={<LuWorkflow aria-hidden="true" />}
+            >
               <p>Pipelines go beyond merely communicating information.</p>
 
               <p className="mt-3">
@@ -393,6 +592,7 @@ PIPELINES`}
           <SectionHeading
             eyebrow="First Major Distinction"
             title="Communication and Workflow Are Not the Same Thing"
+            icon={<LuGitBranch aria-hidden="true" />}
           >
             <p>
               We are going to deliberately simplify the automation landscape for
@@ -406,19 +606,52 @@ PIPELINES`}
           </SectionHeading>
 
           <MentalModel title="A deliberately simplified starting model">
-            {`QUICKBASE TELLS YOU SOMETHING
-        │
-        └── Alert
+            <div className="grid gap-5 lg:grid-cols-3">
+              <div className="rounded-xl border border-[#b7d8c2] bg-white p-5 shadow-sm">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f0fff4] text-2xl text-[#276749]">
+                  <LuBell aria-hidden="true" />
+                </span>
+                <p className="mt-4 text-sm font-bold uppercase tracking-[0.12em] text-[#276749]">
+                  Quickbase tells you something
+                </p>
+                <h4 className="mt-2 text-xl font-extrabold text-[#205c38]">
+                  Alert
+                </h4>
+                <p className="mt-2 leading-7 text-gray-600">
+                  Platform communication originating from Quickbase itself.
+                </p>
+              </div>
 
+              <div className="rounded-xl border border-[#b7d8c2] bg-white p-5 shadow-sm">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f0fff4] text-2xl text-[#276749]">
+                  <LuMail aria-hidden="true" />
+                </span>
+                <p className="mt-4 text-sm font-bold uppercase tracking-[0.12em] text-[#276749]">
+                  Your app tells someone something
+                </p>
+                <h4 className="mt-2 text-xl font-extrabold text-[#205c38]">
+                  Automatic Email
+                </h4>
+                <p className="mt-2 leading-7 text-gray-600">
+                  Record or time-driven communication configured by the app
+                  builder.
+                </p>
+              </div>
 
-YOUR APP TELLS SOMEONE SOMETHING
-        │
-        └── Automatic Email
-
-
-YOUR APP DOES SOMETHING
-        │
-        └── Pipeline`}
+              <div className="rounded-xl border-2 border-[#276749] bg-[#276749] p-5 text-white shadow-sm">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-2xl text-white">
+                  <LuWorkflow aria-hidden="true" />
+                </span>
+                <p className="mt-4 text-sm font-bold uppercase tracking-[0.12em] text-white/75">
+                  Your app does something
+                </p>
+                <h4 className="mt-2 text-xl font-extrabold">Pipeline</h4>
+                <p className="mt-2 leading-7 text-white/85">
+                  Workflow automation performs operations rather than merely
+                  sending information.
+                </p>
+              </div>
+            </div>
           </MentalModel>
 
           <Remember title="Automation does not automatically mean Pipeline">
@@ -442,6 +675,7 @@ YOUR APP DOES SOMETHING
           <SectionHeading
             eyebrow="Communication vs. Action"
             title="Ask What Result the Business Actually Needs"
+            icon={<LuMessageSquare aria-hidden="true" />}
           >
             <p>
               Consider three requirements that initially sound very similar.
@@ -505,6 +739,7 @@ YOUR APP DOES SOMETHING
           <SectionHeading
             eyebrow="Different Causes"
             title="Not Every Automation Begins With a Record Change"
+            icon={<LuRefreshCw aria-hidden="true" />}
           >
             <p>
               One of the most important habits in this course will be
@@ -513,7 +748,10 @@ YOUR APP DOES SOMETHING
           </SectionHeading>
 
           <div className="grid gap-5 md:grid-cols-3">
-            <ConceptCard title="Record Activity">
+            <ConceptCard
+              title="Record Activity"
+              icon={<LuRefreshCw aria-hidden="true" />}
+            >
               <p>A record is added, modified, or deleted.</p>
 
               <p className="mt-3 font-semibold text-[#276749]">
@@ -521,7 +759,10 @@ YOUR APP DOES SOMETHING
               </p>
             </ConceptCard>
 
-            <ConceptCard title="Record Date">
+            <ConceptCard
+              title="Record Date"
+              icon={<LuClock3 aria-hidden="true" />}
+            >
               <p>
                 A stored date becomes important because time has moved closer to
                 it or past it.
@@ -532,7 +773,10 @@ YOUR APP DOES SOMETHING
               </p>
             </ConceptCard>
 
-            <ConceptCard title="Schedule">
+            <ConceptCard
+              title="Schedule"
+              icon={<LuCalendarClock aria-hidden="true" />}
+            >
               <p>
                 A recurring clock reaches Monday morning, the first day of the
                 month, or another scheduled time.
@@ -545,11 +789,55 @@ YOUR APP DOES SOMETHING
           </div>
 
           <MentalModel title="Three causes we will investigate">
-            {`RECORD CHANGE          RECORD DATE          SCHEDULE
-      │                   │                  │
-      ▼                   ▼                  ▼
- something changed     time relative       scheduled
- in the data           to the record       execution`}
+            <div className="grid gap-5 md:grid-cols-3">
+              <div className="rounded-xl border border-[#b7d8c2] bg-white p-5 text-center shadow-sm">
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#f0fff4] text-2xl text-[#276749]">
+                  <LuRefreshCw aria-hidden="true" />
+                </span>
+                <h4 className="mt-4 text-lg font-extrabold text-[#205c38]">
+                  Record Change
+                </h4>
+                <LuArrowDown
+                  aria-hidden="true"
+                  className="mx-auto my-3 text-xl text-[#276749]/60"
+                />
+                <p className="leading-7 text-gray-600">
+                  Something changed in the data.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#b7d8c2] bg-white p-5 text-center shadow-sm">
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#f0fff4] text-2xl text-[#276749]">
+                  <LuClock3 aria-hidden="true" />
+                </span>
+                <h4 className="mt-4 text-lg font-extrabold text-[#205c38]">
+                  Record Date
+                </h4>
+                <LuArrowDown
+                  aria-hidden="true"
+                  className="mx-auto my-3 text-xl text-[#276749]/60"
+                />
+                <p className="leading-7 text-gray-600">
+                  Time changed the meaning of the record.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#b7d8c2] bg-white p-5 text-center shadow-sm">
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#f0fff4] text-2xl text-[#276749]">
+                  <LuCalendarClock aria-hidden="true" />
+                </span>
+                <h4 className="mt-4 text-lg font-extrabold text-[#205c38]">
+                  Schedule
+                </h4>
+                <LuArrowDown
+                  aria-hidden="true"
+                  className="mx-auto my-3 text-xl text-[#276749]/60"
+                />
+                <p className="leading-7 text-gray-600">
+                  The calendar caused the automation to run.
+                </p>
+              </div>
+            </div>
           </MentalModel>
         </section>
 
@@ -561,6 +849,7 @@ YOUR APP DOES SOMETHING
           <SectionHeading
             eyebrow="Course Design"
             title="Why We Are Not Starting With Pipelines"
+            icon={<LuWorkflow aria-hidden="true" />}
           >
             <p>
               Pipelines can perform sophisticated automation, but beginning
@@ -570,7 +859,10 @@ YOUR APP DOES SOMETHING
           </SectionHeading>
 
           <div className="grid gap-5 md:grid-cols-2">
-            <ConceptCard title="First understand communication">
+            <ConceptCard
+              title="First understand communication"
+              icon={<LuMessageSquare aria-hidden="true" />}
+            >
               <p>
                 We need to understand triggers, recipients, dates, conditions,
                 permissions, reports, and record values before those concepts
@@ -578,7 +870,10 @@ YOUR APP DOES SOMETHING
               </p>
             </ConceptCard>
 
-            <ConceptCard title="Then understand workflow">
+            <ConceptCard
+              title="Then understand workflow"
+              icon={<LuWorkflow aria-hidden="true" />}
+            >
               <p>
                 Once a business requirement requires operations beyond
                 communication, Pipelines will enter naturally because the
@@ -608,6 +903,7 @@ YOUR APP DOES SOMETHING
           <SectionHeading
             eyebrow="Orientation Check"
             title="Classify the Requirement Before Choosing a Tool"
+            icon={<LuCircleHelp aria-hidden="true" />}
           >
             <p>
               We are not trying to produce perfect answers yet. The purpose is
@@ -708,6 +1004,7 @@ YOUR APP DOES SOMETHING
           <SectionHeading
             eyebrow="Student Outcome"
             title="What You Should Understand Before Moving On"
+            icon={<LuCheck aria-hidden="true" />}
           />
 
           <div className="rounded-2xl border-2 border-[#276749] bg-[#f0fff4] p-6 sm:p-8">
@@ -785,9 +1082,7 @@ YOUR APP DOES SOMETHING
             </div>
           </div>
         </section>
-
       </article>
     </main>
   );
-}    
-
+}

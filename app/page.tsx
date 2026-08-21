@@ -106,7 +106,7 @@ export default function HomePage() {
                 >
                   <span
                     aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-r from-white via-[#f0fff4] to-white opacity-0 transition duration-300 group-hover:opacity-100"
+                    className="absolute inset-0 bg-linear-to-r from-white via-[#f0fff4] to-white opacity-0 transition duration-300 group-hover:opacity-100"
                   />
 
                   <span

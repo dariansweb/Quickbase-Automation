@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
+
+import {
+  LuArrowDown,
+  LuBraces,
+  LuCable,
+  LuClock3,
+  LuDatabase,
+  LuGitBranch,
+  LuMessagesSquare,
+  LuRefreshCw,
+  LuRocket,
+  LuWorkflow,
+  LuZap,
+} from "react-icons/lu";
 
 import { lessons } from "../data/lessons";
 
@@ -38,6 +53,69 @@ function StatusBadge({
     <span className="rounded-full border border-gray-300 bg-gray-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-gray-600">
       Planned
     </span>
+  );
+}
+
+function MentalArrow() {
+  return (
+    <div className="flex h-12 items-center justify-center">
+      <LuArrowDown
+        aria-hidden="true"
+        className="text-2xl text-[#276749]/60"
+      />
+    </div>
+  );
+}
+
+function MentalModel({
+  icon,
+  title,
+  description,
+  final = false,
+}: {
+  icon: ReactNode;
+  title: string;
+  description: string;
+  final?: boolean;
+}) {
+  return (
+    <div
+      className={`group w-full rounded-2xl border p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md sm:p-6 ${
+        final
+          ? "border-[#276749] bg-[#276749] text-white"
+          : "border-[#b7d8c2] bg-white"
+      }`}
+    >
+      <div className="flex items-start gap-5">
+        <div
+          className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl transition-transform duration-300 group-hover:scale-110 ${
+            final
+              ? "bg-white/15 text-white"
+              : "bg-[#f0fff4] text-[#276749]"
+          }`}
+        >
+          {icon}
+        </div>
+
+        <div>
+          <h3
+            className={`text-xl font-extrabold ${
+              final ? "text-white" : "text-[#205c38]"
+            }`}
+          >
+            {title}
+          </h3>
+
+          <p
+            className={`mt-1 leading-7 ${
+              final ? "text-white/85" : "text-gray-600"
+            }`}
+          >
+            {description}
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -308,37 +386,103 @@ export default function LessonsPage() {
       ====================================================== */}
 
       <section className="border-y border-[#9fc9ad] bg-[#f0fff4]">
-        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-          <p className="font-bold uppercase tracking-[0.14em] text-[#276749]">
-            The Journey
-          </p>
+        <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8 lg:py-16">
+          <div className="max-w-4xl">
+            <p className="font-bold uppercase tracking-[0.14em] text-[#276749]">
+              The Journey
+            </p>
 
-          <h2 className="mt-2 text-3xl font-bold text-[#205c38] sm:text-4xl">
-            The Course Is Moving Toward One Convergence Point
-          </h2>
+            <h2 className="mt-2 text-3xl font-bold text-[#205c38] sm:text-4xl">
+              The Course Is Moving Toward One Convergence Point
+            </h2>
 
-          <div className="mt-7 overflow-x-auto rounded-xl border border-[#9fc9ad] bg-white p-7">
-            <pre className="min-w-max font-mono text-base leading-8">
-              {`INFORMATION
-    ↓
-COMMUNICATION
-    ↓
-EVENTS
-    ↓
-TIME
-    ↓
-CONDITIONS
-    ↓
-STATE CHANGES
-    ↓
-WORKFLOW
-    ↓
-PIPELINES
-    ↓
-QBL + JINJA + JSON + REST API
-    ↓
-COMPLETE AUTOMATION SYSTEM`}
-            </pre>
+            <p className="mt-4 text-lg leading-8 text-gray-700">
+              Each concept builds upon the one before it. What begins as
+              information eventually becomes a complete automation system.
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <div className="mx-auto flex max-w-3xl flex-col items-center">
+              <MentalModel
+                icon={<LuDatabase />}
+                title="Information"
+                description="The data and records that automation begins with."
+              />
+
+              <MentalArrow />
+
+              <MentalModel
+                icon={<LuMessagesSquare />}
+                title="Communication"
+                description="Systems exchange information through defined mechanisms."
+              />
+
+              <MentalArrow />
+
+              <MentalModel
+                icon={<LuZap />}
+                title="Events"
+                description="Something happens that gives automation a reason to act."
+              />
+
+              <MentalArrow />
+
+              <MentalModel
+                icon={<LuClock3 />}
+                title="Time"
+                description="Automation gains awareness of when something should happen."
+              />
+
+              <MentalArrow />
+
+              <MentalModel
+                icon={<LuGitBranch />}
+                title="Conditions"
+                description="Rules determine whether the next action should occur."
+              />
+
+              <MentalArrow />
+
+              <MentalModel
+                icon={<LuRefreshCw />}
+                title="State Changes"
+                description="Records and systems move from one meaningful state to another."
+              />
+
+              <MentalArrow />
+
+              <MentalModel
+                icon={<LuWorkflow />}
+                title="Workflow"
+                description="Events, conditions, and state changes become an organized process."
+              />
+
+              <MentalArrow />
+
+              <MentalModel
+                icon={<LuCable />}
+                title="Pipelines"
+                description="Quickbase orchestrates automation across records, systems, and services."
+              />
+
+              <MentalArrow />
+
+              <MentalModel
+                icon={<LuBraces />}
+                title="QBL + Jinja + JSON + REST API"
+                description="The languages and interfaces give the workflow greater expressive power."
+              />
+
+              <MentalArrow />
+
+              <MentalModel
+                icon={<LuRocket />}
+                title="Complete Automation System"
+                description="Information, events, logic, workflow, and APIs converge into one system."
+                final
+              />
+            </div>
           </div>
         </div>
       </section>
