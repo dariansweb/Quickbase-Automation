@@ -93,28 +93,37 @@ export default function HomePage() {
                 Quickbase knows about it, and what should happen next.
               </p>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                {lessons.length > 0 && (
-                  <Link
-                    href={lessons[0].link}
-                    className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 font-bold text-[#276749] shadow-sm transition hover:-translate-y-0.5 hover:bg-[#f0fff4] hover:shadow-md"
-                  >
-                    Start the Tutorial →
-                  </Link>
-                )}
+              <p className="mt-4 max-w-4xl text-lg leading-8 text-white/90">
+                New students begin by building a small Quickbase Automation Lab
+                application. From there, each lesson adds only the data,
+                configuration, or automation needed for the next experiment.
+              </p>
 
+              <div className="mt-9">
                 <Link
-                  href="/lessons"
-                  className="inline-flex items-center justify-center rounded-lg border-2 border-white px-5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#276749]"
+                  href="/get-started"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl border border-white/40 bg-white px-7 py-4 text-lg font-extrabold text-[#205c38] shadow-[0_14px_40px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.24)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
                 >
-                  View Published Lessons
-                </Link>
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-r from-white via-[#f0fff4] to-white opacity-0 transition duration-300 group-hover:opacity-100"
+                  />
 
-                <Link
-                  href="/about"
-                  className="inline-flex items-center justify-center rounded-lg border border-white/70 px-5 py-3 font-bold text-white transition hover:border-white hover:bg-white/10"
-                >
-                  About the Lab
+                  <span
+                    aria-hidden="true"
+                    className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#9fc9ad]/30 blur-2xl transition duration-300 group-hover:scale-125"
+                  />
+
+                  <span className="relative flex items-center gap-3">
+                    <span>Build the Automation Lab</span>
+
+                    <span
+                      aria-hidden="true"
+                      className="text-2xl leading-none transition-transform duration-300 group-hover:translate-x-1.5"
+                    >
+                      →
+                    </span>
+                  </span>
                 </Link>
               </div>
             </div>
