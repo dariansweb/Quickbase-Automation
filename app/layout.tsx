@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
-
+import { LuBookOpen, LuHouse, LuInfo, LuWorkflow } from "react-icons/lu";
 export const metadata: Metadata = {
   title: {
     default: "Quickbase Automation Developer Lab",
@@ -63,25 +63,41 @@ export default function RootLayout({
         ====================================================== */}
 
         <nav className="sticky top-0 z-50 border-b border-[#17452a] bg-[#17452a] text-white">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6 lg:px-8">
             <Link
               href="/"
-              className="text-sm font-bold tracking-wide text-white hover:underline"
+              className="group flex items-center gap-2 text-sm font-bold tracking-wide text-white"
             >
-              Quickbase Automation Lab
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-lg transition group-hover:bg-white/20">
+                <LuWorkflow aria-hidden="true" />
+              </span>
+
+              <span>Quickbase Automation Lab</span>
             </Link>
 
-            <div className="flex items-center gap-5 text-sm font-semibold">
-              <Link href="/" className="text-white hover:underline">
-                Home
+            <div className="flex items-center gap-2 text-sm font-semibold sm:gap-3">
+              <Link
+                href="/"
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-white/90 transition hover:bg-white/10 hover:text-white"
+              >
+                <LuHouse aria-hidden="true" className="text-base" />
+                <span className="hidden sm:inline">Home</span>
               </Link>
 
-              <Link href="/lessons" className="text-white hover:underline">
-                Lessons
+              <Link
+                href="/lessons"
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-white/90 transition hover:bg-white/10 hover:text-white"
+              >
+                <LuBookOpen aria-hidden="true" className="text-base" />
+                <span className="hidden sm:inline">Lessons</span>
               </Link>
 
-              <Link href="/about" className="text-white hover:underline">
-                About
+              <Link
+                href="/about"
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-white/90 transition hover:bg-white/10 hover:text-white"
+              >
+                <LuInfo aria-hidden="true" className="text-base" />
+                <span className="hidden sm:inline">About</span>
               </Link>
             </div>
           </div>
