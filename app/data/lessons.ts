@@ -15,20 +15,20 @@ export const lessons: Lesson[] = [
       "Establish the vocabulary and conceptual boundaries of Quickbase automation before building anything.",
     link: "/lessons/1",
     phase: "Understanding Quickbase Communication",
-    status: "current",
+    status: "complete",
   },
   {
     number: "2",
-    title: "Records as Events",
+    title: "Records as Events - Notifications",
     description:
       "Explore what Quickbase means when a record is added, modified, or deleted, and separate an event from the resulting record state.",
     link: "/lessons/2",
     phase: "Event-Driven Communication",
-    status: "planned",
+    status: "complete",
   },
   {
     number: "3",
-    title: "Your First Record-Change Email",
+    title: "Your First Record-Change Custom Email",
     description:
       "Build a deliberately broad automatic email triggered by record modification and observe which changes cause it to send.",
     link: "/lessons/3",
