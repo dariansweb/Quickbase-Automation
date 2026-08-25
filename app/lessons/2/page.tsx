@@ -862,19 +862,19 @@ Assigned To    unchanged`}</CodeSample>
 
             <div className="mt-5 grid gap-4 md:grid-cols-3">
               <div className="rounded-lg border border-[#9fc9ad] bg-white p-4">
-                <p className="text-sm font-bold uppercase tracking-[0.1em] text-gray-500">
+                <p className="text-sm font-bold uppercase tracking-widest text-gray-500">
                   Notify
                 </p>
                 <p className="mt-2 font-semibold">Me</p>
               </div>
               <div className="rounded-lg border border-[#9fc9ad] bg-white p-4">
-                <p className="text-sm font-bold uppercase tracking-[0.1em] text-gray-500">
+                <p className="text-sm font-bold uppercase tracking-widest text-gray-500">
                   When
                 </p>
                 <p className="mt-2 font-semibold">a Task is modified</p>
               </div>
               <div className="rounded-lg border border-[#9fc9ad] bg-white p-4">
-                <p className="text-sm font-bold uppercase tracking-[0.1em] text-gray-500">
+                <p className="text-sm font-bold uppercase tracking-widest text-gray-500">
                   AND
                 </p>
                 <p className="mt-2 font-semibold">Any field changes</p>

@@ -27,11 +27,20 @@ export const lessons: Lesson[] = [
     status: "complete",
   },
   {
-    number: "3",
-    title: "How Notifications Decide to Send",
+    number: "3A",
+    title: "Notification Mechanics: Events, Changes & Record State",
     description:
-      "Investigate how Quickbase evaluates a record event using event type, changed-field criteria, after-change conditions, additional criteria, Boolean logic, and operation scope before deciding whether a Notification qualifies to send.",
-    link: "/lessons/3",
+      "Investigate what Quickbase evaluates when record activity occurs by separating record events, changed-field criteria, previous values, current values, and conditions that are true after the change.",
+    link: "/lessons/3a",
+    phase: "Event-Driven Communication",
+    status: "complete",
+  },
+  {
+    number: "3B",
+    title: "Notification Logic: Conditions & Boolean Evaluation",
+    description:
+      "Build on Notification mechanics by translating Quickbase criteria into Boolean logic, testing all versus any, combining field-change and after-change conditions, and introducing grouped criteria and evaluation funnels.",
+    link: "/lessons/3b",
     phase: "Event-Driven Communication",
     status: "current",
   },
