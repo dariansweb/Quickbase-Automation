@@ -330,46 +330,47 @@ export default function LessonTwoPage() {
           FULL-WIDTH LESSON HEADER
       ====================================================== */}
 
-      <header className="relative overflow-hidden border-b border-[#17452a] bg-[#276749] text-white">
-        <div
-          aria-hidden="true"
-          className="absolute right-0 top-0 h-64 w-64 rounded-full bg-white/10 blur-3xl"
-        />
+<header className="relative overflow-hidden border-b border-[#17452a] bg-[#276749] text-white">
+  <div
+    aria-hidden="true"
+    className="absolute right-0 top-0 h-64 w-64 rounded-full bg-white/10 blur-3xl"
+  />
 
-        <div className="relative mx-auto max-w-6xl px-6 py-12 lg:px-8 lg:py-14">
-          <p className="mb-3 font-bold uppercase tracking-[0.18em] text-white/80">
-            Quickbase Automation Developer Lab
-          </p>
+  <div className="relative mx-auto max-w-6xl px-6 py-12 lg:px-8 lg:py-14">
+    <p className="mb-3 font-bold uppercase tracking-[0.18em] text-white/80">
+      Quickbase Automation Developer Lab
+    </p>
 
-          <p className="mb-2 text-lg font-semibold text-white/90">Lesson 2</p>
+    <p className="mb-2 text-lg font-semibold text-white/90">Lesson 2</p>
 
-          <h1 className="max-w-4xl text-4xl font-extrabold leading-tight sm:text-5xl">
-            Records as Events
-          </h1>
+    <h1 className="max-w-4xl text-4xl font-extrabold leading-tight sm:text-5xl">
+      Records as Events
+    </h1>
 
-          <p className="mt-6 max-w-4xl text-xl leading-9 text-white">
-            Open a record. Change something. Save it. This deceptively simple
-            sequence becomes our first real laboratory investigation into what
-            Quickbase means by a record modification.
-          </p>
+    <p className="mt-6 max-w-4xl text-xl leading-9 text-white">
+      What actually happens when a Quickbase record is modified? Begin with
+      ordinary record editing, investigate the difference between unsaved and
+      persisted changes, and then use a Notification as an observer to discover
+      how Quickbase evaluates the event.
+    </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/lessons/1"
-              className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#276749]"
-            >
-              ← Previous Lesson
-            </Link>
+    <div className="mt-8 flex flex-wrap gap-3">
+      <Link
+        href="/lessons/1"
+        className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#276749]"
+      >
+        ← Previous Lesson
+      </Link>
 
-            <Link
-              href="/lessons"
-              className="inline-flex rounded-lg bg-white px-5 py-3 font-bold text-[#276749] transition hover:-translate-y-0.5 hover:bg-[#f0fff4]"
-            >
-              Table of Contents
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Link
+        href="/lessons"
+        className="inline-flex rounded-lg bg-white px-5 py-3 font-bold text-[#276749] transition hover:-translate-y-0.5 hover:bg-[#f0fff4]"
+      >
+        Table of Contents
+      </Link>
+    </div>
+  </div>
+</header>
 
       <article className="mx-auto max-w-6xl px-6 pb-20 pt-10 lg:px-8">
         {/* CENTRAL QUESTION */}
