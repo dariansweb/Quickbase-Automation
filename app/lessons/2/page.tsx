@@ -221,12 +221,16 @@ function FlowStep({
         </span>
 
         <div>
-          <h4 className={`font-extrabold ${final ? "text-white" : "text-[#205c38]"}`}>
+          <h4
+            className={`font-extrabold ${final ? "text-white" : "text-[#205c38]"}`}
+          >
             {title}
           </h4>
 
           {description && (
-            <p className={`mt-1 text-sm leading-6 ${final ? "text-white/85" : "text-gray-600"}`}>
+            <p
+              className={`mt-1 text-sm leading-6 ${final ? "text-white/85" : "text-gray-600"}`}
+            >
               {description}
             </p>
           )}
@@ -286,13 +290,7 @@ function QuestionCard({
   );
 }
 
-function Evidence({
-  title,
-  children,
-}: {
-  title: string;
-  children: ReactNode;
-}) {
+function Evidence({ title, children }: { title: string; children: ReactNode }) {
   return (
     <div className="rounded-xl border border-[#9fc9ad] bg-[#f0fff4] p-5">
       <div className="flex items-start gap-3">
@@ -330,47 +328,47 @@ export default function LessonTwoPage() {
           FULL-WIDTH LESSON HEADER
       ====================================================== */}
 
-<header className="relative overflow-hidden border-b border-[#17452a] bg-[#276749] text-white">
-  <div
-    aria-hidden="true"
-    className="absolute right-0 top-0 h-64 w-64 rounded-full bg-white/10 blur-3xl"
-  />
+      <header className="relative overflow-hidden border-b border-[#17452a] bg-[#276749] text-white">
+        <div
+          aria-hidden="true"
+          className="absolute right-0 top-0 h-64 w-64 rounded-full bg-white/10 blur-3xl"
+        />
 
-  <div className="relative mx-auto max-w-6xl px-6 py-12 lg:px-8 lg:py-14">
-    <p className="mb-3 font-bold uppercase tracking-[0.18em] text-white/80">
-      Quickbase Automation Developer Lab
-    </p>
+        <div className="relative mx-auto max-w-6xl px-6 py-12 lg:px-8 lg:py-14">
+          <p className="mb-3 font-bold uppercase tracking-[0.18em] text-white/80">
+            Quickbase Automation Developer Lab
+          </p>
 
-    <p className="mb-2 text-lg font-semibold text-white/90">Lesson 2</p>
+          <p className="mb-2 text-lg font-semibold text-white/90">Lesson 2</p>
 
-    <h1 className="max-w-4xl text-4xl font-extrabold leading-tight sm:text-5xl">
-      Records as Events
-    </h1>
+          <h1 className="max-w-4xl text-4xl font-extrabold leading-tight sm:text-5xl">
+            Records as Events
+          </h1>
 
-    <p className="mt-6 max-w-4xl text-xl leading-9 text-white">
-      What actually happens when a Quickbase record is modified? Begin with
-      ordinary record editing, investigate the difference between unsaved and
-      persisted changes, and then use a Notification as an observer to discover
-      how Quickbase evaluates the event.
-    </p>
+          <p className="mt-6 max-w-4xl text-xl leading-9 text-white">
+            What actually happens when a Quickbase record is modified? Begin
+            with ordinary record editing, investigate the difference between
+            unsaved and persisted changes, and then use a Notification as an
+            observer to discover how Quickbase evaluates the event.
+          </p>
 
-    <div className="mt-8 flex flex-wrap gap-3">
-      <Link
-        href="/lessons/1"
-        className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#276749]"
-      >
-        ← Previous Lesson
-      </Link>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/lessons/1"
+              className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#276749]"
+            >
+              ← Previous Lesson
+            </Link>
 
-      <Link
-        href="/lessons"
-        className="inline-flex rounded-lg bg-white px-5 py-3 font-bold text-[#276749] transition hover:-translate-y-0.5 hover:bg-[#f0fff4]"
-      >
-        Table of Contents
-      </Link>
-    </div>
-  </div>
-</header>
+            <Link
+              href="/lessons"
+              className="inline-flex rounded-lg bg-white px-5 py-3 font-bold text-[#276749] transition hover:-translate-y-0.5 hover:bg-[#f0fff4]"
+            >
+              Table of Contents
+            </Link>
+          </div>
+        </div>
+      </header>
 
       <article className="mx-auto max-w-6xl px-6 pb-20 pt-10 lg:px-8">
         {/* CENTRAL QUESTION */}
@@ -450,14 +448,16 @@ export default function LessonTwoPage() {
                 />
                 <FlowArrow />
                 <div className="grid w-full gap-3 sm:grid-cols-2">
-                  {["Task Name", "Due Date", "Status", "Assigned To"].map((field) => (
-                    <div
-                      key={field}
-                      className="rounded-lg border border-[#b7d8c2] bg-white p-3 text-center font-semibold text-[#205c38]"
-                    >
-                      {field}
-                    </div>
-                  ))}
+                  {["Task Name", "Due Date", "Status", "Assigned To"].map(
+                    (field) => (
+                      <div
+                        key={field}
+                        className="rounded-lg border border-[#b7d8c2] bg-white p-3 text-center font-semibold text-[#205c38]"
+                      >
+                        {field}
+                      </div>
+                    ),
+                  )}
                 </div>
               </div>
             </MentalModel>
@@ -486,7 +486,10 @@ export default function LessonTwoPage() {
               <p className="mt-3 font-semibold text-[#276749]">Then it did.</p>
             </ConceptCard>
 
-            <ConceptCard title="Modify" icon={<LuRefreshCw aria-hidden="true" />}>
+            <ConceptCard
+              title="Modify"
+              icon={<LuRefreshCw aria-hidden="true" />}
+            >
               <p>A record already existed and its persisted data changed.</p>
               <p className="mt-3 font-semibold text-[#276749]">
                 This is today&apos;s laboratory focus.
@@ -646,14 +649,20 @@ Assigned To    unchanged`}</CodeSample>
           </div>
 
           <div className="mt-6 grid gap-5 md:grid-cols-3">
-            <ConceptCard title="Record ID#" icon={<LuDatabase aria-hidden="true" />}>
+            <ConceptCard
+              title="Record ID#"
+              icon={<LuDatabase aria-hidden="true" />}
+            >
               <p>
                 Record #17 remained Record #17 before and after modification.
                 The existing record persisted through the change.
               </p>
             </ConceptCard>
 
-            <ConceptCard title="Created vs. Modified" icon={<LuClock3 aria-hidden="true" />}>
+            <ConceptCard
+              title="Created vs. Modified"
+              icon={<LuClock3 aria-hidden="true" />}
+            >
               <p>
                 Date Created and Date Modified expose different points in the
                 record lifecycle. Creation and modification are not the same
@@ -661,7 +670,10 @@ Assigned To    unchanged`}</CodeSample>
               </p>
             </ConceptCard>
 
-            <ConceptCard title="Owner vs. Modifier" icon={<LuUserRound aria-hidden="true" />}>
+            <ConceptCard
+              title="Owner vs. Modifier"
+              icon={<LuUserRound aria-hidden="true" />}
+            >
               <p>
                 Record Owner answers who owns the record. Last Modified By
                 answers who most recently changed it. Identical values do not
@@ -695,12 +707,16 @@ Assigned To    unchanged`}</CodeSample>
               <div className="mx-auto grid max-w-3xl gap-5 md:grid-cols-2">
                 <div className="rounded-xl border border-[#b7d8c2] bg-white p-5 text-center">
                   <p className="font-bold text-[#205c38]">EDIT MODE</p>
-                  <p className="mt-3 text-2xl font-extrabold text-[#276749]">≠</p>
+                  <p className="mt-3 text-2xl font-extrabold text-[#276749]">
+                    ≠
+                  </p>
                   <p className="mt-3">MODIFICATION</p>
                 </div>
                 <div className="rounded-xl border border-[#b7d8c2] bg-white p-5 text-center">
                   <p className="font-bold text-[#205c38]">SAVE BUTTON</p>
-                  <p className="mt-3 text-2xl font-extrabold text-[#276749]">≠</p>
+                  <p className="mt-3 text-2xl font-extrabold text-[#276749]">
+                    ≠
+                  </p>
                   <p className="mt-3">AUTOMATICALLY A MODIFICATION</p>
                 </div>
               </div>
@@ -935,8 +951,8 @@ Open Record:
           >
             <p>
               The Notification now becomes a second independent instrument. We
-              can compare what the record metadata says with whether the observer
-              sends an email.
+              can compare what the record metadata says with whether the
+              observer sends an email.
             </p>
           </SectionHeading>
 
@@ -1135,8 +1151,8 @@ Email                  YES`}</CodeSample>
             icon={<LuGitBranch aria-hidden="true" />}
           >
             <p>
-              Keep the requirement that Status must change, then add a
-              condition evaluated after the change:
+              Keep the requirement that Status must change, then add a condition
+              evaluated after the change:
             </p>
           </SectionHeading>
 
@@ -1182,7 +1198,10 @@ Status = Complete?    NO
 EMAIL: NO`}</CodeSample>
             </ExperimentCard>
 
-            <ExperimentCard title="Open / On Hold → Complete" observed="Email sent">
+            <ExperimentCard
+              title="Open / On Hold → Complete"
+              observed="Email sent"
+            >
               <CodeSample>{`Status changed?       YES
 Status = Complete?    YES
 
@@ -1237,9 +1256,15 @@ EMAIL: NO`}</CodeSample>
 
           <MentalModel title="The Lesson 2 event model">
             <div className="mx-auto flex max-w-2xl flex-col items-center">
-              <FlowStep icon={<LuDatabase aria-hidden="true" />} title="Record" />
+              <FlowStep
+                icon={<LuDatabase aria-hidden="true" />}
+                title="Record"
+              />
               <FlowArrow />
-              <FlowStep icon={<LuZap aria-hidden="true" />} title="Modification" />
+              <FlowStep
+                icon={<LuZap aria-hidden="true" />}
+                title="Modification"
+              />
               <FlowArrow />
               <FlowStep
                 icon={<LuFilter aria-hidden="true" />}
@@ -1289,8 +1314,8 @@ EMAIL: NO`}</CodeSample>
           >
             <p>
               The experiment exposed more Quickbase syntax than this lesson
-              needs. We use only what helps us observe the behavior and defer the
-              wider marker system for later.
+              needs. We use only what helps us observe the behavior and defer
+              the wider marker system for later.
             </p>
           </SectionHeading>
 
@@ -1345,8 +1370,9 @@ EMAIL: NO`}</CodeSample>
             icon={<LuCircleHelp aria-hidden="true" />}
           >
             <p>
-              Today&apos;s experiments opened several doors. We leave them open on
-              purpose rather than cramming unrelated complexity into Lesson 2.
+              Today&apos;s experiments opened several doors. We leave them open
+              on purpose rather than cramming unrelated complexity into Lesson
+              2.
             </p>
           </SectionHeading>
 
@@ -1412,14 +1438,18 @@ EMAIL: NO`}</CodeSample>
 
             <p className="mt-4 text-lg leading-8">
               When changed data is saved, the existing record persists under the
-              same Record ID while Quickbase updates its modification metadata. A
-              single saved modification can contain changes to multiple fields.
+              same Record ID while Quickbase updates its modification metadata.
+              A single saved modification can contain changes to multiple
+              fields.
             </p>
 
             <p className="mt-4 text-lg leading-8">
               Automation can then evaluate that event at several levels:
-              <strong> Did the record change? Which fields changed? What
-              conditions are true after the change?</strong>
+              <strong>
+                {" "}
+                Did the record change? Which fields changed? What conditions are
+                true after the change?
+              </strong>
             </p>
 
             <p className="mt-4 text-lg leading-8">
@@ -1431,17 +1461,33 @@ EMAIL: NO`}</CodeSample>
           <MentalModel title="Compact Lesson 2 model">
             <div className="mx-auto grid max-w-4xl gap-8 lg:grid-cols-[1.2fr_0.8fr]">
               <div className="flex flex-col items-center">
-                <FlowStep icon={<LuDatabase aria-hidden="true" />} title="Record" />
+                <FlowStep
+                  icon={<LuDatabase aria-hidden="true" />}
+                  title="Record"
+                />
                 <FlowArrow />
                 <FlowStep icon={<LuZap aria-hidden="true" />} title="Event" />
                 <FlowArrow />
-                <FlowStep icon={<LuFilter aria-hidden="true" />} title="Changed Fields" />
+                <FlowStep
+                  icon={<LuFilter aria-hidden="true" />}
+                  title="Changed Fields"
+                />
                 <FlowArrow />
-                <FlowStep icon={<LuGitBranch aria-hidden="true" />} title="Resulting State" />
+                <FlowStep
+                  icon={<LuGitBranch aria-hidden="true" />}
+                  title="Resulting State"
+                />
                 <FlowArrow />
-                <FlowStep icon={<LuSettings2 aria-hidden="true" />} title="Automation Decision" />
+                <FlowStep
+                  icon={<LuSettings2 aria-hidden="true" />}
+                  title="Automation Decision"
+                />
                 <FlowArrow />
-                <FlowStep icon={<LuMail aria-hidden="true" />} title="Action" final />
+                <FlowStep
+                  icon={<LuMail aria-hidden="true" />}
+                  title="Action"
+                  final
+                />
               </div>
 
               <div className="flex flex-col justify-center">
