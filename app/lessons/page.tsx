@@ -14,6 +14,14 @@ import {
   LuRocket,
   LuWorkflow,
   LuZap,
+  LuBookOpen,
+  LuFlaskConical,
+  LuLightbulb,
+  LuSearch,
+  LuTelescope,
+  LuWrench,
+  LuArrowRight,
+  LuBadgeCheck,
 } from "react-icons/lu";
 
 import { lessons } from "../data/lessons";
@@ -59,10 +67,7 @@ function StatusBadge({
 function MentalArrow() {
   return (
     <div className="flex h-12 items-center justify-center">
-      <LuArrowDown
-        aria-hidden="true"
-        className="text-2xl text-[#276749]/60"
-      />
+      <LuArrowDown aria-hidden="true" className="text-2xl text-[#276749]/60" />
     </div>
   );
 }
@@ -89,9 +94,7 @@ function MentalModel({
       <div className="flex items-start gap-5">
         <div
           className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl transition-transform duration-300 group-hover:scale-110 ${
-            final
-              ? "bg-white/15 text-white"
-              : "bg-[#f0fff4] text-[#276749]"
+            final ? "bg-white/15 text-white" : "bg-[#f0fff4] text-[#276749]"
           }`}
         >
           {icon}
@@ -492,38 +495,251 @@ export default function LessonsPage() {
       ====================================================== */}
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
-        <div className="rounded-2xl border border-gray-300 bg-[#f7f8fa] p-6 sm:p-8">
-          <p className="font-bold uppercase tracking-[0.14em] text-[#276749]">
-            How a Planned Lesson Becomes a Real Lesson
-          </p>
+        <div className="overflow-hidden rounded-2xl border border-gray-300 bg-[#f7f8fa] shadow-sm">
+          {/* ======================================================
+        SECTION INTRO
+    ====================================================== */}
 
-          <h2 className="mt-2 text-3xl font-bold text-[#205c38]">
-            Quickbase Gets the Final Vote
-          </h2>
+          <div className="border-b border-gray-200 p-6 sm:p-8">
+            <p className="font-bold uppercase tracking-[0.14em] text-[#276749]">
+              How a Planned Lesson Becomes a Real Lesson
+            </p>
 
-          <p className="mt-5 max-w-5xl text-lg leading-8">
-            Planned lesson titles describe what we expect to investigate. The
-            published lesson is written only after documentation, prediction,
-            experimentation, and observation have established what actually
-            happened.
-          </p>
+            <h2 className="mt-2 text-3xl font-bold text-[#205c38]">
+              Quickbase Gets the Final Vote
+            </h2>
 
-          <div className="mt-7 overflow-x-auto rounded-xl border border-gray-300 bg-white p-6">
-            <pre className="min-w-max font-mono text-base leading-8">
-              {`PLANNED TOPIC
-     ↓
-RESEARCH
-     ↓
-PREDICTION
-     ↓
-QUICKBASE EXPERIMENT
-     ↓
-OBSERVATION
-     ↓
-CORRECTION
-     ↓
-PUBLISHED LESSON`}
-            </pre>
+            <p className="mt-5 max-w-5xl text-lg leading-8 text-gray-700">
+              Planned lesson titles describe what we expect to investigate. The
+              published lesson is written only after documentation, prediction,
+              experimentation, and observation have established what actually
+              happened.
+            </p>
+          </div>
+
+          {/* ======================================================
+        EXPERIMENTAL PROCESS
+    ====================================================== */}
+
+          <div className="p-6 sm:p-8">
+            <div className="grid gap-4 lg:grid-cols-7 lg:items-stretch">
+              {/* PLANNED TOPIC */}
+              <div className="group flex flex-col rounded-xl border border-gray-300 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#9fc9ad] hover:shadow-md">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f0fff4] text-xl text-[#276749]">
+                  <LuBookOpen aria-hidden="true" />
+                </div>
+
+                <p className="mt-4 text-xs font-bold uppercase tracking-[0.12em] text-gray-500">
+                  Step 1
+                </p>
+
+                <h3 className="mt-1 font-bold text-[#205c38]">Planned Topic</h3>
+
+                <p className="mt-3 text-sm leading-6 text-gray-600">
+                  Begin with the concept we expect to investigate.
+                </p>
+              </div>
+
+              {/* ARROW */}
+              <div className="flex items-center justify-center">
+                <LuArrowDown
+                  aria-hidden="true"
+                  className="text-2xl text-[#276749]/50 lg:hidden"
+                />
+
+                <LuArrowRight
+                  aria-hidden="true"
+                  className="hidden text-2xl text-[#276749]/50 lg:block"
+                />
+              </div>
+
+              {/* RESEARCH */}
+              <div className="group flex flex-col rounded-xl border border-gray-300 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#9fc9ad] hover:shadow-md">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f0fff4] text-xl text-[#276749]">
+                  <LuSearch aria-hidden="true" />
+                </div>
+
+                <p className="mt-4 text-xs font-bold uppercase tracking-[0.12em] text-gray-500">
+                  Step 2
+                </p>
+
+                <h3 className="mt-1 font-bold text-[#205c38]">Research</h3>
+
+                <p className="mt-3 text-sm leading-6 text-gray-600">
+                  Consult Quickbase documentation and establish what we know.
+                </p>
+              </div>
+
+              {/* ARROW */}
+              <div className="flex items-center justify-center">
+                <LuArrowDown
+                  aria-hidden="true"
+                  className="text-2xl text-[#276749]/50 lg:hidden"
+                />
+
+                <LuArrowRight
+                  aria-hidden="true"
+                  className="hidden text-2xl text-[#276749]/50 lg:block"
+                />
+              </div>
+
+              {/* PREDICTION */}
+              <div className="group flex flex-col rounded-xl border border-gray-300 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#9fc9ad] hover:shadow-md">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f0fff4] text-xl text-[#276749]">
+                  <LuLightbulb aria-hidden="true" />
+                </div>
+
+                <p className="mt-4 text-xs font-bold uppercase tracking-[0.12em] text-gray-500">
+                  Step 3
+                </p>
+
+                <h3 className="mt-1 font-bold text-[#205c38]">Prediction</h3>
+
+                <p className="mt-3 text-sm leading-6 text-gray-600">
+                  State what we expect Quickbase to do before testing it.
+                </p>
+              </div>
+
+              {/* ARROW */}
+              <div className="flex items-center justify-center">
+                <LuArrowDown
+                  aria-hidden="true"
+                  className="text-2xl text-[#276749]/50 lg:hidden"
+                />
+
+                <LuArrowRight
+                  aria-hidden="true"
+                  className="hidden text-2xl text-[#276749]/50 lg:block"
+                />
+              </div>
+
+              {/* EXPERIMENT */}
+              <div className="group flex flex-col rounded-xl border-2 border-[#9fc9ad] bg-[#f0fff4] p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-xl text-[#276749] shadow-sm">
+                  <LuFlaskConical aria-hidden="true" />
+                </div>
+
+                <p className="mt-4 text-xs font-bold uppercase tracking-[0.12em] text-[#276749]">
+                  Step 4
+                </p>
+
+                <h3 className="mt-1 font-bold text-[#205c38]">
+                  Quickbase Experiment
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-gray-700">
+                  Change one meaningful variable and test the prediction.
+                </p>
+              </div>
+            </div>
+
+            {/* SECOND ROW */}
+
+            <div className="my-4 flex justify-center lg:justify-end lg:pr-[6%]">
+              <LuArrowDown
+                aria-hidden="true"
+                className="text-2xl text-[#276749]/50"
+              />
+            </div>
+
+            <div className="grid gap-4 lg:grid-cols-5 lg:items-stretch">
+              {/* OBSERVATION */}
+              <div className="group flex flex-col rounded-xl border border-gray-300 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#9fc9ad] hover:shadow-md">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f0fff4] text-xl text-[#276749]">
+                  <LuTelescope aria-hidden="true" />
+                </div>
+
+                <p className="mt-4 text-xs font-bold uppercase tracking-[0.12em] text-gray-500">
+                  Step 5
+                </p>
+
+                <h3 className="mt-1 font-bold text-[#205c38]">Observation</h3>
+
+                <p className="mt-3 text-sm leading-6 text-gray-600">
+                  Record what Quickbase actually did, including surprises.
+                </p>
+              </div>
+
+              <div className="flex items-center justify-center">
+                <LuArrowDown
+                  aria-hidden="true"
+                  className="text-2xl text-[#276749]/50 lg:hidden"
+                />
+
+                <LuArrowRight
+                  aria-hidden="true"
+                  className="hidden text-2xl text-[#276749]/50 lg:block"
+                />
+              </div>
+
+              {/* CORRECTION */}
+              <div className="group flex flex-col rounded-xl border border-gray-300 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#9fc9ad] hover:shadow-md">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f0fff4] text-xl text-[#276749]">
+                  <LuWrench aria-hidden="true" />
+                </div>
+
+                <p className="mt-4 text-xs font-bold uppercase tracking-[0.12em] text-gray-500">
+                  Step 6
+                </p>
+
+                <h3 className="mt-1 font-bold text-[#205c38]">Correction</h3>
+
+                <p className="mt-3 text-sm leading-6 text-gray-600">
+                  Revise our mental model when evidence disagrees with
+                  expectation.
+                </p>
+              </div>
+
+              <div className="flex items-center justify-center">
+                <LuArrowDown
+                  aria-hidden="true"
+                  className="text-2xl text-[#276749]/50 lg:hidden"
+                />
+
+                <LuArrowRight
+                  aria-hidden="true"
+                  className="hidden text-2xl text-[#276749]/50 lg:block"
+                />
+              </div>
+
+              {/* PUBLISHED LESSON */}
+              <div className="group flex flex-col rounded-xl border-2 border-[#276749] bg-[#276749] p-5 text-white shadow-md transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-xl text-white">
+                  <LuBadgeCheck aria-hidden="true" />
+                </div>
+
+                <p className="mt-4 text-xs font-bold uppercase tracking-[0.12em] text-white/70">
+                  Step 7
+                </p>
+
+                <h3 className="mt-1 font-bold text-white">Published Lesson</h3>
+
+                <p className="mt-3 text-sm leading-6 text-white/85">
+                  Teach what the evidence established—not merely what we
+                  expected.
+                </p>
+              </div>
+            </div>
+
+            {/* FINAL PRINCIPLE */}
+
+            <div className="mt-8 flex gap-4 rounded-xl border border-[#9fc9ad] bg-[#f0fff4] p-5 sm:p-6">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white text-xl text-[#276749] shadow-sm">
+                <LuFlaskConical aria-hidden="true" />
+              </span>
+
+              <div>
+                <p className="font-bold text-[#205c38]">
+                  The lesson plan is a hypothesis, not a contract.
+                </p>
+
+                <p className="mt-2 max-w-4xl leading-7 text-gray-700">
+                  Documentation gives us a starting point. Prediction gives us
+                  something testable. Observed Quickbase behavior determines
+                  what ultimately belongs in the published lesson.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -14,9 +14,10 @@ export const lessons: Lesson[] = [
     description:
       "Establish the vocabulary and conceptual boundaries of Quickbase automation, distinguishing record-driven, time-driven, report-driven, and workflow-driven behavior before building anything.",
     link: "/lessons/1",
-    phase: "Understanding Quickbase Communication",
+    phase: "Understanding Quickbase Automation",
     status: "complete",
   },
+
   {
     number: "2",
     title: "Records as Events - Notifications",
@@ -26,121 +27,204 @@ export const lessons: Lesson[] = [
     phase: "Event-Driven Communication",
     status: "complete",
   },
+
   {
     number: "3A",
     title: "Notification Mechanics: Events, Changes & Record State",
     description:
-      "Investigate what Quickbase evaluates when record activity occurs by separating record events, changed-field criteria, previous values, current values, and conditions that are true after the change.",
+      "Investigate how Notifications evaluate record activity by separating Add, Modify, and Delete events, watched-field changes, previous and current values, and conditions that become true after a change.",
     link: "/lessons/3a",
     phase: "Event-Driven Communication",
     status: "complete",
   },
+
   {
     number: "3B",
-    title: "Notification Logic: Conditions & Boolean Evaluation",
+    title: "Notification Logic: Boolean Rules & Operation Scope",
     description:
-      "Build on Notification mechanics by translating Quickbase criteria into Boolean logic, testing all versus any, combining field-change and after-change conditions, and introducing grouped criteria and evaluation funnels.",
+      "Build compound Notification rules with all, any, and grouped criteria, then investigate how individual form edits and Grid Edit produce single-record and multiple-record notification behavior.",
     link: "/lessons/3b",
     phase: "Event-Driven Communication",
-    status: "current",
+    status: "complete",
   },
+
   {
     number: "4",
-    title: "Before and After",
+    title: "Custom Email: Why Does It Exist?",
     description:
-      "Investigate previous and current field values as evidence of a record transition, distinguish resulting state from the path taken to reach it, and explore what Notifications can reveal about that transition.",
+      "Compare Custom Email with Notifications while investigating dynamic recipients, recipient permissions, record-change elements, bulk behavior, and the richer controls that distinguish the modern Custom Email system.",
     link: "/lessons/4",
-    phase: "Understanding Change",
-    status: "planned",
+    phase: "Event-Driven Communication",
+    status: "complete",
   },
+
   {
     number: "5",
-    title: "Building Useful Notification Content",
+    title: "Scheduling Automated Communication",
     description:
-      "Turn experimental Notifications into meaningful communication using field references, previous values, Quickbase markers, record links, message formatting, and other dynamic record context.",
+      "Move from event-driven to time-driven automation and learn why an unchanged record can become relevant simply because time has advanced.",
     link: "/lessons/5",
-    phase: "Understanding Change",
-    status: "planned",
+    phase: "Time-Driven Communication",
+    status: "current",
   },
+
   {
-    number: "6",
-    title: "Who Receives the Message?",
+    number: "5A",
+    title: "Scheduled Custom Email",
     description:
-      "Explore fixed recipients, User fields, email fields, and dynamic recipients while learning how record data can determine who receives an automated message.",
-    link: "/lessons/6",
-    phase: "People, Recipients, and Security",
-    status: "planned",
-  },
-  {
-    number: "7",
-    title: "Permissions Are Part of Automation",
-    description:
-      "Examine recipient access, permission type, authorization context, external recipients, and why deciding who may receive or view automated information is part of automation design.",
-    link: "/lessons/7",
-    phase: "People, Recipients, and Security",
-    status: "planned",
-  },
-  {
-    number: "8",
-    title: "Nothing Changed, but Something Happened",
-    description:
-      "Leave record-change events behind temporarily and introduce time-driven communication through Reminders, where dates stored in records can matter even when nobody edits the record.",
-    link: "/lessons/8",
+      "Extend Custom Email from record events to recurring schedules and investigate when precise timing, flexible composition, and current Quickbase data make scheduled Custom Email the appropriate communication tool.",
+    link: "/lessons/5a",
     phase: "Time-Driven Communication",
     status: "planned",
   },
+
   {
-    number: "9",
-    title: "Event Time Versus Record Time",
-    description:
-      "Compare automation caused by record changes with automation driven by dates and time, and learn to recognize which timing model a business requirement actually describes.",
-    link: "/lessons/9",
-    phase: "Time-Driven Communication",
-    status: "planned",
-  },
-  {
-    number: "10",
+    number: "5B",
     title: "Report Subscriptions",
     description:
-      "Use reports to define what information matters and Subscriptions to define when that information is delivered, introducing report-driven communication as a third automation model.",
-    link: "/lessons/10",
-    phase: "Report-Driven Communication",
+      "Examine the report-centered scheduling model and learn when the simplest requirement is not to build a sophisticated email, but simply to deliver an existing Quickbase report on a recurring schedule.",
+    link: "/lessons/5b",
+    phase: "Time-Driven Communication",
     status: "planned",
   },
+
+  {
+    number: "5C",
+    title: "Reminders",
+    description:
+      "Explore date-relative communication and learn when automation should be driven by the relationship between the current time and a Date field stored on each record.",
+    link: "/lessons/5c",
+    phase: "Time-Driven Communication",
+    status: "planned",
+  },
+
+  {
+    number: "6",
+    title: "Choosing the Correct Automation Tool",
+    description:
+      "Compare Notifications, Custom Emails, scheduled Custom Emails, Subscriptions, Reminders, and Quickbase Alerts through realistic requirements and learn to identify the simplest native mechanism that naturally expresses the business need.",
+    link: "/lessons/6",
+    phase: "Automation Architecture",
+    status: "planned",
+  },
+
+  {
+    number: "7",
+    title: "When Communication Is Not Enough",
+    description:
+      "Identify requirements that cannot be solved by sending information alone and establish the boundary between communication automation and workflows that must perform actions on data.",
+    link: "/lessons/7",
+    phase: "From Communication to Workflow",
+    status: "planned",
+  },
+
+  {
+    number: "8",
+    title: "Introduction to Quickbase Pipelines",
+    description:
+      "Cross from automated communication into workflow automation by examining what Pipelines are, how they differ from native email mechanisms, and how triggers, steps, channels, and actions form an executable workflow.",
+    link: "/lessons/8",
+    phase: "Pipeline Foundations",
+    status: "planned",
+  },
+
+  {
+    number: "9",
+    title: "Pipeline Triggers and Actions",
+    description:
+      "Build the first controlled Pipeline experiments and separate the event that starts a workflow from the actions Quickbase performs after that event occurs.",
+    link: "/lessons/9",
+    phase: "Pipeline Foundations",
+    status: "planned",
+  },
+
+  {
+    number: "10",
+    title: "Passing Data Through a Pipeline",
+    description:
+      "Follow record data from one Pipeline step to another and learn how outputs from earlier steps become inputs to later actions.",
+    link: "/lessons/10",
+    phase: "Pipeline Foundations",
+    status: "planned",
+  },
+
   {
     number: "11",
-    title: "Personalized Reports and Execution Context",
+    title: "Pipeline Conditions and Branching",
     description:
-      "Explore how permissions, users, and execution context can cause the same report to expose different information to different recipients.",
+      "Carry the Boolean reasoning developed in Notification lessons into executable workflows by controlling whether Pipeline steps continue, branch, or stop according to data and conditions.",
     link: "/lessons/11",
-    phase: "Report-Driven Communication",
+    phase: "Pipeline Logic",
     status: "planned",
   },
+
   {
     number: "12",
-    title: "Custom Emails",
+    title: "Queries in Automation",
     description:
-      "Bring record-change and scheduled communication concepts together using Quickbase's modern Custom Email system, comparing its capabilities with the Notification model already explored.",
+      "Introduce Quickbase queries as a precise language for identifying records, connecting familiar field conditions and Boolean logic with the query expressions used by more advanced automation.",
     link: "/lessons/12",
-    phase: "The Modern Email Model",
+    phase: "Query-Driven Automation",
     status: "planned",
   },
+
   {
     number: "13",
-    title: "Choosing the Simplest Correct Tool",
+    title: "Jinja in Pipelines",
     description:
-      "Compare Notifications, Reminders, Subscriptions, and Custom Emails through realistic requirements and learn to choose the simplest native Quickbase mechanism that correctly solves the problem.",
+      "Introduce Jinja as the expression and templating layer encountered in Pipelines, beginning with values and variables before progressing into transformations and conditional expressions.",
     link: "/lessons/13",
-    phase: "The Modern Email Model",
+    phase: "Pipeline Logic",
     status: "planned",
   },
+
   {
     number: "14",
-    title: "When Sending an Email Isn't Enough",
+    title: "Dates, Time, and Jinja",
     description:
-      "Identify requirements that exceed communication alone and recognize the boundary where a notification mechanism must give way to a workflow engine capable of taking actions.",
+      "Apply Jinja to dates and time so Pipeline logic can calculate relative dates, evaluate temporal conditions, and build dynamic values from the execution context.",
     link: "/lessons/14",
-    phase: "Where Email Automation Ends",
+    phase: "Pipeline Logic",
+    status: "planned",
+  },
+
+  {
+    number: "15",
+    title: "Finding and Processing Records",
+    description:
+      "Combine queries, Pipeline steps, and Jinja to find qualifying Quickbase records and process the resulting data as part of a workflow.",
+    link: "/lessons/15",
+    phase: "Query-Driven Automation",
+    status: "planned",
+  },
+
+  {
+    number: "16",
+    title: "Creating and Updating Records",
+    description:
+      "Move beyond communication by using Pipelines to create and modify Quickbase records, while considering execution order, conditions, data integrity, and unintended automation loops.",
+    link: "/lessons/16",
+    phase: "Workflow Automation",
+    status: "planned",
+  },
+
+  {
+    number: "17",
+    title: "Relationships in Automated Workflows",
+    description:
+      "Use Quickbase relationships in automation by following reference and lookup data across related tables and reasoning about parent and child records inside workflow logic.",
+    link: "/lessons/17",
+    phase: "Workflow Automation",
+    status: "planned",
+  },
+
+  {
+    number: "18",
+    title: "Designing Reliable Automations",
+    description:
+      "Bring triggers, conditions, queries, Jinja, relationships, and record actions together while examining duplicate execution, loops, failure handling, observability, and maintainable workflow design.",
+    link: "/lessons/18",
+    phase: "Automation Engineering",
     status: "planned",
   },
 ];
