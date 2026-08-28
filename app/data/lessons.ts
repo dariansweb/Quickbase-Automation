@@ -60,34 +60,22 @@ export const lessons: Lesson[] = [
 
   {
     number: "5",
-    title: "Scheduling Automated Communication",
+    title: "Scheduled Custom Email",
     description:
-      "Move from event-driven to time-driven automation and learn why an unchanged record can become relevant simply because time has advanced.",
+      "Shift from event-driven to time-driven communication and learn how recurring Custom Emails use schedules, reports, recipient permissions, empty-report behavior, and UTC timing to communicate current Quickbase state.",
     link: "/lessons/5",
+    phase: "Time-Driven Communication",
+    status: "complete",
+  },
+  {
+    number: "5A",
+    title: "Report Subscriptions",
+    description:
+      "Compare Report Subscriptions with Scheduled Custom Email and learn when simple recurring report delivery is a better fit than building a composed scheduled communication.",
+    link: "/lessons/5a",
     phase: "Time-Driven Communication",
     status: "current",
   },
-
-  {
-    number: "5A",
-    title: "Scheduled Custom Email",
-    description:
-      "Extend Custom Email from record events to recurring schedules and investigate when precise timing, flexible composition, and current Quickbase data make scheduled Custom Email the appropriate communication tool.",
-    link: "/lessons/5a",
-    phase: "Time-Driven Communication",
-    status: "planned",
-  },
-
-  {
-    number: "5B",
-    title: "Report Subscriptions",
-    description:
-      "Examine the report-centered scheduling model and learn when the simplest requirement is not to build a sophisticated email, but simply to deliver an existing Quickbase report on a recurring schedule.",
-    link: "/lessons/5b",
-    phase: "Time-Driven Communication",
-    status: "planned",
-  },
-
   {
     number: "5C",
     title: "Reminders",
