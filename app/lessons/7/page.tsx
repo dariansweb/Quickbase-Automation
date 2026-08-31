@@ -520,6 +520,12 @@ export default function LessonSevenPage() {
               ← Previous Lesson
             </Link>
             <Link
+              href="/lessons/8"
+              className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white"
+            >
+              Next Lesson →
+            </Link>{" "}                 
+            <Link
               href="/lessons"
               className="inline-flex rounded-lg bg-white px-5 py-3 font-bold text-[#276749]"
             >

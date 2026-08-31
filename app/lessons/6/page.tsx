@@ -561,11 +561,17 @@ export default function LessonSixPage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/lessons/5a"
+              href="/lessons/5"
               className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white"
             >
               ← Previous Lesson
             </Link>
+            <Link
+              href="/lessons/7"
+              className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white"
+            >
+              Next Lesson →
+            </Link>{" "}            
             <Link
               href="/lessons"
               className="inline-flex rounded-lg bg-white px-5 py-3 font-bold text-[#276749]"

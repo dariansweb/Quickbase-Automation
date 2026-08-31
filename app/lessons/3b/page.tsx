@@ -305,16 +305,16 @@ export default function LessonThreeBPage() {
               ← Previous Lesson
             </Link>
             <Link
+              href="/lessons/4"
+              className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#276749]"
+            >
+              Next Lesson →
+            </Link>{" "}
+            <Link
               href="/lessons"
               className="inline-flex rounded-lg bg-white px-5 py-3 font-bold text-[#276749] transition hover:-translate-y-0.5 hover:bg-[#f0fff4]"
             >
               Table of Contents
-            </Link>
-            <Link
-              href="/lessons/4"
-              className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#276749]"
-            >
-              Next: Lesson 4 →
             </Link>
           </div>
         </div>

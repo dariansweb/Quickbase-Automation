@@ -103,115 +103,141 @@ export const lessons: Lesson[] = [
       "Identify requirements that cannot be solved by sending information alone and establish the boundary between communication automation and workflows that must perform actions on data.",
     link: "/lessons/7",
     phase: "From Communication to Workflow",
-    status: "current",
+    status: "complete",
   },
 
   {
     number: "8",
-    title: "Introduction to Quickbase Pipelines",
+    title: "Crossing Into Workflow Automation",
     description:
-      "Cross from automated communication into workflow automation by examining what Pipelines are, how they differ from native email mechanisms, and how triggers, steps, channels, and actions form an executable workflow.",
+      "Cross the boundary established in Lesson 7 from native communication automation into executable workflows. Establish what Quickbase Pipelines are, where they exist in the realm, the problems they solve, and the foundational vocabulary of pipelines, channels, accounts, triggers, steps, actions, queries, and execution.",
     link: "/lessons/8",
     phase: "Pipeline Foundations",
-    status: "planned",
+    status: "current",
   },
-
   {
     number: "9",
-    title: "Pipeline Triggers and Actions",
+    title: "Anatomy of a Pipeline",
     description:
-      "Build the first controlled Pipeline experiments and separate the event that starts a workflow from the actions Quickbase performs after that event occurs.",
+      "Open the Pipeline designer and examine the components that make a workflow executable. Explore channels, accounts, triggers, actions, queries, step configuration, field mappings, results, metadata, and step references before building a complete automation.",
     link: "/lessons/9",
     phase: "Pipeline Foundations",
     status: "planned",
   },
-
   {
     number: "10",
-    title: "Passing Data Through a Pipeline",
+    title: "Our First Pipeline Execution",
     description:
-      "Follow record data from one Pipeline step to another and learn how outputs from earlier steps become inputs to later actions.",
+      "Build the first deliberately small Pipeline experiment and trace a Quickbase record mutation from trigger detection through Pipeline execution and a resulting action. Predict the outcome first, execute the workflow, and compare the observed result with the prediction.",
     link: "/lessons/10",
     phase: "Pipeline Foundations",
     status: "planned",
   },
-
   {
     number: "11",
-    title: "Pipeline Conditions and Branching",
+    title: "Reading the Activity Log",
     description:
-      "Carry the Boolean reasoning developed in Notification lessons into executable workflows by controlling whether Pipeline steps continue, branch, or stop according to data and conditions.",
+      "Use the Pipeline Activity Log as an experimental instrument for observing workflow execution. Inspect runs, individual steps, inputs, outputs, runtime values, execution order, and errors so future Pipeline behavior can be investigated from evidence rather than assumptions.",
     link: "/lessons/11",
-    phase: "Pipeline Logic",
+    phase: "Pipeline Foundations",
     status: "planned",
   },
-
   {
     number: "12",
-    title: "Queries in Automation",
+    title: "Passing Data Through a Pipeline",
     description:
-      "Introduce Quickbase queries as a precise language for identifying records, connecting familiar field conditions and Boolean logic with the query expressions used by more advanced automation.",
+      "Follow runtime data from one Pipeline step to another and learn how outputs produced by earlier steps become inputs to later steps. Establish the data-flow model needed to understand step references, conditions, queries, actions, and eventually Jinja.",
     link: "/lessons/12",
-    phase: "Query-Driven Automation",
+    phase: "Pipeline Data Flow",
     status: "planned",
   },
-
   {
     number: "13",
-    title: "Jinja in Pipelines",
+    title: "Conditions, Branches, and Stops",
     description:
-      "Introduce Jinja as the expression and templating layer encountered in Pipelines, beginning with values and variables before progressing into transformations and conditional expressions.",
+      "Carry the Boolean reasoning developed in the Notification lessons into executable workflows. Use conditions to determine whether Pipeline execution continues, follows a branch, takes an alternate path, or stops based on runtime data.",
     link: "/lessons/13",
     phase: "Pipeline Logic",
     status: "planned",
   },
-
   {
     number: "14",
-    title: "Dates, Time, and Jinja",
+    title: "Queries: Finding Records",
     description:
-      "Apply Jinja to dates and time so Pipeline logic can calculate relative dates, evaluate temporal conditions, and build dynamic values from the execution context.",
+      "Learn how Pipelines locate Quickbase records by separating single-record lookups from queries that can return collections. Build controlled searches, inspect their results, and reason about filtering, result size, and the downstream consequences of retrieving multiple records.",
     link: "/lessons/14",
-    phase: "Pipeline Logic",
+    phase: "Query-Driven Automation",
     status: "planned",
   },
-
   {
     number: "15",
-    title: "Finding and Processing Records",
+    title: "Collections, Loops, and Record Processing",
     description:
-      "Combine queries, Pipeline steps, and Jinja to find qualifying Quickbase records and process the resulting data as part of a workflow.",
+      "Distinguish a single record from a collection of records and examine how Pipelines process query results. Follow collections into loops, inspect individual loop iterations, and learn how downstream actions operate once per qualifying item.",
     link: "/lessons/15",
     phase: "Query-Driven Automation",
     status: "planned",
   },
-
   {
     number: "16",
-    title: "Creating and Updating Records",
+    title: "Jinja: Referencing Pipeline Data",
     description:
-      "Move beyond communication by using Pipelines to create and modify Quickbase records, while considering execution order, conditions, data integrity, and unintended automation loops.",
+      "Introduce Jinja from the perspective of Pipeline runtime data rather than syntax memorization. Learn how step references expose earlier outputs, how fields and objects are addressed, and how expressions retrieve the values needed by later workflow steps.",
     link: "/lessons/16",
-    phase: "Workflow Automation",
+    phase: "Pipeline Expressions",
     status: "planned",
   },
-
   {
     number: "17",
-    title: "Relationships in Automated Workflows",
+    title: "Transforming Data With Jinja",
     description:
-      "Use Quickbase relationships in automation by following reference and lookup data across related tables and reasoning about parent and child records inside workflow logic.",
+      "Move beyond simple references and use Jinja to transform Pipeline data. Work with strings, numbers, filters, defaults, conditional expressions, combined values, and missing data while tracing every transformation back to its runtime source.",
     link: "/lessons/17",
+    phase: "Pipeline Expressions",
+    status: "planned",
+  },
+  {
+    number: "18",
+    title: "Dates, Time, and Scheduling",
+    description:
+      "Apply Pipeline expressions to dates and time while examining Quickbase's UTC execution model, parsing, formatting, relative date calculations, time zones, and scheduled Pipelines. Compare scheduled workflow execution with the scheduled communication mechanisms studied earlier.",
+    link: "/lessons/18",
+    phase: "Pipeline Expressions",
+    status: "planned",
+  },
+  {
+    number: "19",
+    title: "Creating and Updating Records",
+    description:
+      "Move from observing and retrieving data to deliberately changing Quickbase through Pipeline actions. Create and update records while examining field mappings, execution identity, permissions, data integrity, execution order, and the events produced by Pipeline-driven mutations.",
+    link: "/lessons/19",
     phase: "Workflow Automation",
     status: "planned",
   },
-
   {
-    number: "18",
-    title: "Designing Reliable Automations",
+    number: "20",
+    title: "Secondary Events and Automation Loops",
     description:
-      "Bring triggers, conditions, queries, Jinja, relationships, and record actions together while examining duplicate execution, loops, failure handling, observability, and maintainable workflow design.",
-    link: "/lessons/18",
+      "Investigate what happens after a Pipeline changes Quickbase data. Determine when Pipeline-created mutations can trigger additional automation, identify self-triggering and cross-workflow loop risks, and develop controlled strategies for preventing unintended repeated execution.",
+    link: "/lessons/20",
+    phase: "Workflow Automation",
+    status: "planned",
+  },
+  {
+    number: "21",
+    title: "Relationships and Cross-Record Workflows",
+    description:
+      "Use Quickbase relationships inside automated workflows by following reference, lookup, parent, and child data across related tables. Find related records, act on connected data, and distinguish native Quickbase relationships from Pipeline linking mechanisms.",
+    link: "/lessons/21",
+    phase: "Workflow Automation",
+    status: "planned",
+  },
+  {
+    number: "22",
+    title: "Reliable Pipeline Engineering",
+    description:
+      "Bring the Pipeline execution model together by investigating failures, retries, permissions, schema changes, duplicate execution, bulk operations, background steps, accounts, YAML, Connection Central, observability, maintenance, and troubleshooting practices for dependable automation.",
+    link: "/lessons/22",
     phase: "Automation Engineering",
     status: "planned",
   },
