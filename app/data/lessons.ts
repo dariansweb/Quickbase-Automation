@@ -93,7 +93,7 @@ export const lessons: Lesson[] = [
       "Compare Notifications, Custom Emails, scheduled Custom Emails, Subscriptions, Reminders, and Quickbase Alerts through realistic requirements and learn to identify the simplest native mechanism that naturally expresses the business need.",
     link: "/lessons/6",
     phase: "Automation Architecture",
-    status: "current",
+    status: "complete",
   },
 
   {
@@ -103,7 +103,7 @@ export const lessons: Lesson[] = [
       "Identify requirements that cannot be solved by sending information alone and establish the boundary between communication automation and workflows that must perform actions on data.",
     link: "/lessons/7",
     phase: "From Communication to Workflow",
-    status: "planned",
+    status: "current",
   },
 
   {
