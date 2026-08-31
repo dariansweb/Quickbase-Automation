@@ -74,7 +74,7 @@ export const lessons: Lesson[] = [
       "Compare Report Subscriptions with Scheduled Custom Email and learn when simple recurring report delivery is a better fit than building a composed scheduled communication.",
     link: "/lessons/5a",
     phase: "Time-Driven Communication",
-    status: "current",
+    status: "planned",
   },
   {
     number: "5C",
@@ -93,7 +93,7 @@ export const lessons: Lesson[] = [
       "Compare Notifications, Custom Emails, scheduled Custom Emails, Subscriptions, Reminders, and Quickbase Alerts through realistic requirements and learn to identify the simplest native mechanism that naturally expresses the business need.",
     link: "/lessons/6",
     phase: "Automation Architecture",
-    status: "planned",
+    status: "current",
   },
 
   {
