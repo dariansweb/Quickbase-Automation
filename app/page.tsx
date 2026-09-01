@@ -89,73 +89,95 @@ export default function HomePage() {
           HERO
       ====================================================== */}
 
-      <header className="border-b border-[#17452a] bg-[#276749] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
-          <div className="relative overflow-hidden">
-            <div
-              aria-hidden="true"
-              className="absolute right-10 top-0 h-80 w-80 rounded-full bg-white/10 blur-3xl"
-            />
+      <header className="relative overflow-hidden border-b border-[#17452a] bg-[#276749] text-white">
+        <div
+          aria-hidden="true"
+          className="absolute right-0 top-0 h-96 w-96 rounded-full bg-white/10 blur-3xl"
+        />
 
-            <div className="relative max-w-5xl">
-              <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-white/80 sm:text-base">
+        <div
+          aria-hidden="true"
+          className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-[#9fc9ad]/20 blur-3xl"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
+          <div className="max-w-5xl">
+            <div className="mb-5 flex flex-wrap items-center gap-3">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-white/80 sm:text-base">
                 Quickbase Tutorials
               </p>
 
-              <h1 className="max-w-5xl text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
-                Automation Developer Lab
-              </h1>
+              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-white/85">
+                Independent Learning Lab
+              </span>
+            </div>
 
-              <p className="mt-5 max-w-4xl text-xl leading-9 text-white">
-                Learn how Quickbase responds when data, time, conditions, or
-                workflow requirements demand that something happen.
-              </p>
+            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+              Automation Developer Lab
+            </h1>
 
-              <p className="mt-5 max-w-4xl text-lg leading-8 text-white/90">
-                Begin with communication and record events, then progressively
-                investigate time, conditions, state changes, workflow logic,
-                Pipelines, QBL, Jinja, JSON, APIs, and automation reliability.
-              </p>
+            <p className="mt-6 max-w-4xl text-xl leading-9 text-white">
+              Learn Quickbase by building, testing, observing, and explaining
+              what the platform actually does.
+            </p>
 
-              <p className="mt-4 max-w-4xl text-lg leading-8 text-white/90">
-                The purpose is not to memorize where automation controls appear
-                in Quickbase. The purpose is to understand what happened, what
-                Quickbase knows about it, and what should happen next.
-              </p>
+            <p className="mt-5 max-w-4xl text-lg leading-8 text-white/90">
+              The lab begins with native communication and record events, then
+              progressively moves into conditions, time, state changes, workflow
+              orchestration, Pipelines, runtime data, queries, actions,
+              collections, loops, Jinja, and integration.
+            </p>
 
-              <p className="mt-4 max-w-4xl text-lg leading-8 text-white/90">
-                New students begin by building a small Quickbase Automation Lab
-                application. From there, each lesson adds only the data,
-                configuration, or automation needed for the next experiment.
-              </p>
+            <p className="mt-4 max-w-4xl text-lg leading-8 text-white/90">
+              Each lesson grows from hands-on research rather than a fixed
+              feature checklist. We predict behavior, test Quickbase, preserve
+              the evidence, and correct the model when the platform teaches us
+              something new.
+            </p>
 
-              <div className="mt-9">
-                <Link
-                  href="/get-started"
-                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl border border-white/40 bg-white px-7 py-4 text-lg font-extrabold text-[#205c38] shadow-[0_14px_40px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.24)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
-                >
+            <div className="mt-9 flex flex-wrap gap-4">
+              <Link
+                href="/get-started"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl border border-white/40 bg-white px-7 py-4 text-lg font-extrabold text-[#205c38] shadow-[0_14px_40px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.24)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
+              >
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-linear-to-r from-white via-[#f0fff4] to-white opacity-0 transition duration-300 group-hover:opacity-100"
+                />
+
+                <span className="relative flex items-center gap-3">
+                  <span>Build the Automation Lab</span>
                   <span
                     aria-hidden="true"
-                    className="absolute inset-0 bg-linear-to-r from-white via-[#f0fff4] to-white opacity-0 transition duration-300 group-hover:opacity-100"
-                  />
-
-                  <span
-                    aria-hidden="true"
-                    className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#9fc9ad]/30 blur-2xl transition duration-300 group-hover:scale-125"
-                  />
-
-                  <span className="relative flex items-center gap-3">
-                    <span>Build the Automation Lab</span>
-
-                    <span
-                      aria-hidden="true"
-                      className="text-2xl leading-none transition-transform duration-300 group-hover:translate-x-1.5"
-                    >
-                      →
-                    </span>
+                    className="text-2xl transition-transform duration-300 group-hover:translate-x-1.5"
+                  >
+                    →
                   </span>
-                </Link>
-              </div>
+                </span>
+              </Link>
+
+              <a
+                href="https://github.com/dariansweb/Quickbase-Automation"
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center justify-center gap-3 rounded-2xl border-2 border-white/40 bg-white/10 px-7 py-4 text-lg font-extrabold text-white transition duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-[#205c38]"
+              >
+                <span>View on GitHub</span>
+
+                <span
+                  aria-hidden="true"
+                  className="text-xl transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  ↗
+                </span>
+              </a>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/70">
+              <span>Native Automation</span>
+              <span>Pipelines</span>
+              <span>REST API + JSON</span>
+              <span>Next.js + TypeScript</span>
             </div>
           </div>
         </div>
