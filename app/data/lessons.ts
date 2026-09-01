@@ -110,19 +110,19 @@ export const lessons: Lesson[] = [
     number: "8",
     title: "Crossing Into Workflow Automation",
     description:
-      "Cross the boundary established in Lesson 7 from native communication automation into executable workflows. Establish what Quickbase Pipelines are, where they exist in the realm, the problems they solve, and the foundational vocabulary of pipelines, channels, accounts, triggers, steps, actions, queries, and execution.",
+      "Cross from native communication automation into executable workflows and build a mental model of the Pipeline machine. Establish realm scope, workflow initiation, definitions versus runtime executions, steps, channels, accounts, runtime data, collections, and the role of execution evidence before opening the Pipeline designer.",
     link: "/lessons/8",
     phase: "Pipeline Foundations",
-    status: "current",
+    status: "complete",
   },
   {
     number: "9",
     title: "Anatomy of a Pipeline",
     description:
-      "Open the Pipeline designer and examine the components that make a workflow executable. Explore channels, accounts, triggers, actions, queries, step configuration, field mappings, results, metadata, and step references before building a complete automation.",
+      "Open the Pipeline designer and dissect real Trigger, Query, and Action steps through controlled experiments. Investigate channels, accounts, step identity and Ref IDs, field roles, runtime references, data flow, literals versus dynamic values, Query collections, and the Loop structure that appears when multiple records must be processed.",
     link: "/lessons/9",
     phase: "Pipeline Foundations",
-    status: "planned",
+    status: "current",
   },
   {
     number: "10",
