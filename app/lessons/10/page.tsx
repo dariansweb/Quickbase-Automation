@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
+  LuDatabase,
   LuArrowDown,
   LuArrowLeft,
   LuArrowRight,
@@ -1035,7 +1036,71 @@ export default function Lesson10Page() {
           </Exercise>
         </div>
       </section>
+      {/* ======================================================
+          LABORATORY UPGRADE
+      ====================================================== */}
 
+      <section className="border-y border-[#9fc9ad] bg-[#f0fff4]">
+        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-14">
+          <div className="overflow-hidden rounded-2xl border-2 border-[#276749] bg-white shadow-sm">
+            <div className="p-6 sm:p-8">
+              <div className="flex items-start gap-5">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#276749] text-2xl text-white">
+                  <LuDatabase aria-hidden="true" />
+                </span>
+
+                <div className="flex-1">
+                  <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#276749]">
+                    Laboratory Upgrade
+                  </p>
+
+                  <h2 className="mt-2 text-3xl font-extrabold text-[#205c38] sm:text-4xl">
+                    Before We Add Relationships
+                  </h2>
+
+                  <p className="mt-5 max-w-4xl text-lg leading-8 text-gray-700">
+                    Our first Pipeline experiments deliberately stayed inside
+                    the Tasks table. We now have a known-good single-table
+                    baseline, so we are ready to introduce one new variable: a
+                    relationship.
+                  </p>
+
+                  <p className="mt-4 max-w-4xl text-lg leading-8 text-gray-700">
+                    The <strong>Getting Started</strong> page now contains a
+                    separate <strong>Getting Ready for Lesson 10</strong>{" "}
+                    section with the instructions for creating the Projects
+                    table, building the Projects → Tasks relationship, and
+                    adding the additional laboratory records used in the next
+                    experiments.
+                  </p>
+
+                  <div className="mt-6 rounded-xl border border-[#d4a72c] bg-[#fffaf0] p-5">
+                    <p className="font-extrabold text-[#654700]">
+                      Complete that laboratory upgrade before continuing below.
+                    </p>
+
+                    <p className="mt-2 leading-7 text-gray-700">
+                      We didn&apos;t build Projects earlier because we
+                      didn&apos;t need Projects earlier. Lesson 10 has finally
+                      given us a reason.
+                    </p>
+                  </div>
+
+                  <div className="mt-6">
+                    <Link
+                      href="/get-started"
+                      className="inline-flex items-center gap-2 rounded-xl bg-[#276749] px-5 py-3 font-extrabold text-white transition hover:bg-[#205c38]"
+                    >
+                      Getting Ready for Lesson 10
+                      <LuArrowRight aria-hidden="true" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
         <SectionHeading
           eyebrow="Known-Good Baseline"
