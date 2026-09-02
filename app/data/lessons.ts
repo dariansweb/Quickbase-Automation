@@ -122,16 +122,16 @@ export const lessons: Lesson[] = [
       "Open the Pipeline designer and dissect real Trigger, Query, and Action steps through controlled experiments. Investigate channels, accounts, step identity and Ref IDs, field roles, runtime references, data flow, literals versus dynamic values, Query collections, and the Loop structure that appears when multiple records must be processed.",
     link: "/lessons/9",
     phase: "Pipeline Foundations",
-    status: "current",
+    status: "complete",
   },
   {
     number: "10",
     title: "Our First Pipeline Execution",
     description:
-      "Build the first deliberately small Pipeline experiment and trace a Quickbase record mutation from trigger detection through Pipeline execution and a resulting action. Predict the outcome first, execute the workflow, and compare the observed result with the prediction.",
+      "Build and execute a Pipeline from a clean definition. Trace a Task mutation through its Trigger and Action, test runtime data availability and field updates, use controlled experiments to prove when the Pipeline runs, and investigate how relationship-derived fields behave when child and parent records change.",
     link: "/lessons/10",
     phase: "Pipeline Foundations",
-    status: "planned",
+    status: "current",
   },
   {
     number: "11",

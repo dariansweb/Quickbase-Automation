@@ -56,12 +56,13 @@ function StatusBadge({
       </span>
     );
   }
-
-  return (
-    <span className="rounded-full border border-gray-300 bg-gray-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-gray-600">
-      Planned
-    </span>
-  );
+  if (status === "planned") {
+    return (
+      <span className="rounded-full border border-gray-300 bg-gray-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-gray-600">
+        Planned
+      </span>
+    );
+  }
 }
 
 function MentalArrow() {

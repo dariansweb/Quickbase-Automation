@@ -1075,6 +1075,534 @@ export default function GettingStartedPage() {
         </section>
 
         {/* ======================================================
+            GETTING READY FOR LESSON 10
+        ====================================================== */}
+
+        <section className="mb-16">
+          <SectionHeading
+            step="Later Laboratory Upgrade"
+            title="Getting Ready for Lesson 10"
+            icon={<LuWorkflow aria-hidden="true" />}
+          >
+            <p>
+              Lessons 1–9 deliberately used our original Tasks table. Lesson 10
+              is the first time our Pipeline experiments give us a reason to
+              expand the laboratory.
+            </p>
+
+            <p className="mt-4">
+              Do this preparation <strong>after Lesson 9</strong> and before
+              opening Lesson 10.
+            </p>
+          </SectionHeading>
+
+          <Remember title="The original rule still stands">
+            <p>
+              We did not build Projects earlier because we did not need Projects
+              earlier.
+            </p>
+
+            <p className="mt-3 font-bold">
+              Lesson 10 finally gives us a reason.
+            </p>
+          </Remember>
+
+          {/* ADD PIPELINE RESULTS */}
+
+          <div className="mt-10 overflow-hidden rounded-2xl border border-gray-300 bg-white shadow-sm">
+            <div className="border-b border-[#b7d8c2] bg-[#f0fff4] px-6 py-5">
+              <div className="flex items-center gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#276749] text-xl text-white">
+                  <LuZap aria-hidden="true" />
+                </span>
+
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#276749]">
+                    Upgrade 1
+                  </p>
+
+                  <h3 className="mt-1 text-2xl font-extrabold text-[#205c38]">
+                    Add Pipeline Results to Tasks
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 sm:p-7">
+              <div className="overflow-hidden rounded-xl border border-gray-300">
+                <table className="w-full border-collapse">
+                  <thead className="bg-[#205c38] text-white">
+                    <tr>
+                      <th className="p-4 text-left">Field</th>
+                      <th className="p-4 text-left">Type</th>
+                      <th className="p-4 text-left">Purpose</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="p-4 font-bold">Pipeline Results</td>
+                      <td className="p-4">Text</td>
+                      <td className="p-4">
+                        Gives our first Pipeline a harmless, dedicated field
+                        where it can visibly prove that an Action executed.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="mt-5 flex items-start gap-3 rounded-xl border border-[#d4a72c] bg-[#fffaf0] p-5">
+                <LuCircleAlert
+                  aria-hidden="true"
+                  className="mt-1 shrink-0 text-xl text-[#7a5200]"
+                />
+
+                <div>
+                  <p className="font-bold text-[#654700]">
+                    Leave Pipeline Results blank before Lesson 10.
+                  </p>
+
+                  <p className="mt-2 leading-7 text-gray-700">
+                    Lesson 10 uses that blank field as controlled evidence. If
+                    text suddenly appears there after the first execution, we
+                    know exactly what produced it.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* PROJECTS TABLE */}
+
+          <div className="mt-8 overflow-hidden rounded-2xl border border-gray-300 bg-white shadow-sm">
+            <div className="border-b border-[#b7d8c2] bg-[#f0fff4] px-6 py-5">
+              <div className="flex items-center gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#276749] text-xl text-white">
+                  <LuTable2 aria-hidden="true" />
+                </span>
+
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#276749]">
+                    Upgrade 2
+                  </p>
+
+                  <h3 className="mt-1 text-2xl font-extrabold text-[#205c38]">
+                    Create the Projects Table
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-190 border-collapse">
+                <thead className="bg-[#205c38] text-white">
+                  <tr>
+                    <th className="p-4 text-left">Field</th>
+                    <th className="p-4 text-left">Type</th>
+                    <th className="p-4 text-left">Purpose</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr className="border-b border-gray-200">
+                    <td className="p-4 font-bold">Project Name</td>
+                    <td className="p-4">Text</td>
+                    <td className="p-4">Identifies the parent Project</td>
+                  </tr>
+
+                  <tr className="border-b border-gray-200 bg-[#fbfcfb]">
+                    <td className="p-4 font-bold">Project Status</td>
+                    <td className="p-4">Text - Multiple Choice</td>
+                    <td className="p-4">
+                      Gives us parent state to expose through a relationship
+                    </td>
+                  </tr>
+
+                  <tr className="border-b border-gray-200">
+                    <td className="p-4 font-bold">Project Manager</td>
+                    <td className="p-4">User</td>
+                    <td className="p-4">
+                      Identifies the person responsible for the Project
+                    </td>
+                  </tr>
+
+                  <tr className="bg-[#fbfcfb]">
+                    <td className="p-4 font-bold">Target Date</td>
+                    <td className="p-4">Date</td>
+                    <td className="p-4">
+                      Gives the parent record a time-oriented value
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="border-t border-gray-200 bg-[#f7f8fa] p-6">
+              <p className="font-bold text-[#205c38]">Project Status choices</p>
+
+              <div className="mt-3 flex flex-wrap gap-3">
+                {["Active", "On Hold", "Complete"].map((status) => (
+                  <span
+                    key={status}
+                    className="rounded-full border border-[#9fc9ad] bg-white px-4 py-2 font-semibold text-gray-800"
+                  >
+                    {status}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* RELATIONSHIP */}
+
+          <div className="mt-8 overflow-hidden rounded-2xl border-2 border-[#276749] bg-[#f0fff4] shadow-sm">
+            <div className="border-b border-[#9fc9ad] bg-white px-6 py-5">
+              <div className="flex items-center gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#276749] text-xl text-white">
+                  <LuUsers aria-hidden="true" />
+                </span>
+
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#276749]">
+                    Upgrade 3
+                  </p>
+
+                  <h3 className="mt-1 text-2xl font-extrabold text-[#205c38]">
+                    Create the Projects → Tasks Relationship
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 sm:p-8">
+              <div className="mx-auto flex max-w-3xl flex-col items-center">
+                <div className="w-full rounded-2xl border border-[#b7d8c2] bg-white p-5 text-center shadow-sm">
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">
+                    Parent
+                  </p>
+                  <p className="mt-1 text-2xl font-extrabold text-[#205c38]">
+                    Projects
+                  </p>
+                </div>
+
+                <div className="flex h-12 items-center justify-center">
+                  <LuArrowDown
+                    aria-hidden="true"
+                    className="text-2xl text-[#276749]"
+                  />
+                </div>
+
+                <span className="rounded-full bg-[#276749] px-4 py-2 font-extrabold text-white">
+                  1 Project → many Tasks
+                </span>
+
+                <div className="flex h-12 items-center justify-center">
+                  <LuArrowDown
+                    aria-hidden="true"
+                    className="text-2xl text-[#276749]"
+                  />
+                </div>
+
+                <div className="w-full rounded-2xl border-2 border-[#276749] bg-[#276749] p-5 text-center text-white shadow-lg">
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/70">
+                    Child
+                  </p>
+                  <p className="mt-1 text-2xl font-extrabold">Tasks</p>
+                </div>
+              </div>
+
+              <p className="mx-auto mt-7 max-w-4xl text-center text-lg leading-8 text-gray-700">
+                Do not turn this into a relationships lesson yet. We only need
+                enough relationship structure for Lesson 10 to compare a real
+                child-record mutation with a parent change that affects a
+                relationship-derived lookup.
+              </p>
+
+              <div className="mt-7 grid gap-4 md:grid-cols-2">
+                <ConceptCard
+                  title="Child-side fields"
+                  icon={<LuGitBranch aria-hidden="true" />}
+                >
+                  <p>
+                    Expect relationship fields such as{" "}
+                    <strong>Related Project</strong>, the Project name
+                    reference/proxy field produced in your app, and a{" "}
+                    <strong>Project Status</strong> lookup.
+                  </p>
+                </ConceptCard>
+
+                <ConceptCard
+                  title="Parent-side helpers"
+                  icon={<LuDatabase aria-hidden="true" />}
+                >
+                  <p>
+                    Quickbase also creates relationship helpers on Projects,
+                    such as related Task report, count, and add/link fields.
+                    Their exact labels can vary.
+                  </p>
+                </ConceptCard>
+              </div>
+
+              <div className="mt-6 rounded-xl border border-[#d4a72c] bg-[#fffaf0] p-5">
+                <p className="font-bold text-[#654700]">
+                  Use the field names Quickbase actually creates in your app.
+                </p>
+
+                <p className="mt-2 leading-7 text-gray-700">
+                  In our laboratory, the child side included{" "}
+                  <strong>Related Project</strong>,{" "}
+                  <strong>Project Name / Project Name2</strong>, and{" "}
+                  <strong>Project Status</strong>. Lesson 10 records those
+                  observed names instead of pretending every app will label a
+                  reference proxy identically.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* ACTUAL PROJECT DATA */}
+
+          <div className="mt-8">
+            <h3 className="text-2xl font-extrabold text-[#205c38]">
+              Populate the Projects Table
+            </h3>
+
+            <p className="mt-3 max-w-5xl text-lg leading-8 text-gray-700">
+              These are the four Project records used in our Lesson 10
+              laboratory. Using the same values makes the relationship
+              experiments easier to reproduce.
+            </p>
+
+            <div className="mt-5 overflow-x-auto rounded-2xl border border-gray-300 bg-white shadow-sm">
+              <table className="w-full min-w-220 border-collapse">
+                <thead className="bg-[#205c38] text-white">
+                  <tr>
+                    <th className="p-4 text-left">Project Name</th>
+                    <th className="p-4 text-left">Status</th>
+                    <th className="p-4 text-left">Manager</th>
+                    <th className="p-4 text-left">Target Date</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {[
+                    ["November Reporting Cycle", "Active", "You", "11/15/2026"],
+                    [
+                      "Application Review Project",
+                      "Active",
+                      "You",
+                      "11/30/2026",
+                    ],
+                    [
+                      "Training Documentation Refresh",
+                      "On Hold",
+                      "You",
+                      "12/15/2026",
+                    ],
+                    [
+                      "Monthly Administrative Work",
+                      "Active",
+                      "You",
+                      "12/31/2026",
+                    ],
+                  ].map((row, index) => (
+                    <tr
+                      key={row[0]}
+                      className={`border-b border-gray-200 last:border-b-0 ${
+                        index % 2 === 1 ? "bg-[#fbfcfb]" : ""
+                      }`}
+                    >
+                      {row.map((cell, cellIndex) => (
+                        <td
+                          key={cell}
+                          className={`p-4 ${
+                            cellIndex === 0 ? "font-semibold" : ""
+                          }`}
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* EXTRA TASK DATA */}
+
+          <div className="mt-10">
+            <h3 className="text-2xl font-extrabold text-[#205c38]">
+              Add More Tasks for Pipeline Research
+            </h3>
+
+            <p className="mt-3 max-w-5xl text-lg leading-8 text-gray-700">
+              The original three Tasks were enough for the early communication
+              lessons. Pipeline work benefits from a larger set of records
+              spread across several Projects.
+            </p>
+
+            <div className="mt-5 overflow-x-auto rounded-2xl border border-gray-300 bg-white shadow-sm">
+              <table className="w-full min-w-250 border-collapse">
+                <thead className="bg-[#205c38] text-white">
+                  <tr>
+                    <th className="p-4 text-left">Task Name</th>
+                    <th className="p-4 text-left">Due Date</th>
+                    <th className="p-4 text-left">Status</th>
+                    <th className="p-4 text-left">Related Project</th>
+                    <th className="p-4 text-left">Pipeline Results</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {[
+                    [
+                      "Draft November Reporting Checklist",
+                      "11/04/2026",
+                      "Open",
+                      "November Reporting Cycle",
+                    ],
+                    [
+                      "Validate November Report Data",
+                      "11/08/2026",
+                      "Open",
+                      "November Reporting Cycle",
+                    ],
+                    [
+                      "Finalize November Reporting Package",
+                      "11/12/2026",
+                      "Open",
+                      "Training Documentation Refresh",
+                    ],
+                    [
+                      "Review Pending Applications",
+                      "11/10/2026",
+                      "Open",
+                      "Application Review Project",
+                    ],
+                    [
+                      "Send Application Follow-Up Notices",
+                      "11/18/2026",
+                      "On Hold",
+                      "Application Review Project",
+                    ],
+                    [
+                      "Review Pipeline Training Notes",
+                      "11/14/2026",
+                      "Open",
+                      "Training Documentation Refresh",
+                    ],
+                    [
+                      "Publish Updated Training Guide",
+                      "12/01/2026",
+                      "On Hold",
+                      "Training Documentation Refresh",
+                    ],
+                    [
+                      "Reconcile Monthly Administrative Records",
+                      "11/20/2026",
+                      "Open",
+                      "Monthly Administrative Work",
+                    ],
+                  ].map((row, index) => (
+                    <tr
+                      key={row[0]}
+                      className={`border-b border-gray-200 last:border-b-0 ${
+                        index % 2 === 1 ? "bg-[#fbfcfb]" : ""
+                      }`}
+                    >
+                      <td className="p-4 font-semibold">{row[0]}</td>
+                      <td className="p-4">{row[1]}</td>
+                      <td className="p-4">{row[2]}</td>
+                      <td className="p-4">{row[3]}</td>
+                      <td className="p-4">
+                        <span className="rounded-lg border border-dashed border-gray-400 bg-[#f7f8fa] px-3 py-1 font-semibold text-gray-500">
+                          blank
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-5 rounded-xl border border-gray-300 bg-[#f7f8fa] p-5">
+              <p className="font-bold text-[#205c38]">About the research CSV</p>
+
+              <p className="mt-2 leading-7 text-gray-700">
+                Our finished research data contains later edits, changed
+                statuses, and one Pipeline Results value created during Lesson
+                10. The table above intentionally shows the{" "}
+                <strong>pre-experiment setup state</strong>: use the records and
+                relationships, but leave Pipeline Results blank so Lesson 10 can
+                generate the evidence itself.
+              </p>
+            </div>
+          </div>
+
+          {/* READY FOR LESSON 10 */}
+
+          <div className="mt-10 overflow-hidden rounded-2xl border-2 border-[#276749] bg-[#276749] text-white shadow-lg shadow-[#276749]/15">
+            <div className="p-7 sm:p-9">
+              <div className="flex items-start gap-5">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 text-2xl">
+                  <LuCheck aria-hidden="true" />
+                </span>
+
+                <div>
+                  <p className="font-bold uppercase tracking-[0.14em] text-white/70">
+                    Laboratory Upgraded
+                  </p>
+
+                  <h3 className="mt-2 text-3xl font-extrabold">
+                    Now We Have a Reason for Relationships.
+                  </h3>
+
+                  <p className="mt-5 max-w-5xl text-lg leading-8 text-white/90">
+                    The laboratory now contains multiple Projects, Tasks
+                    belonging to different Projects, relationship-derived
+                    values, and a blank Pipeline Results field ready to capture
+                    our first deliberate Pipeline Action.
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-3 text-sm font-bold">
+                    <span className="rounded-full bg-white/10 px-4 py-2">
+                      Projects: multiple parent records
+                    </span>
+                    <span className="rounded-full bg-white/10 px-4 py-2">
+                      Tasks: multiple child records
+                    </span>
+                    <span className="rounded-full bg-white/10 px-4 py-2">
+                      Related Project
+                    </span>
+                    <span className="rounded-full bg-white/10 px-4 py-2">
+                      Project Status lookup
+                    </span>
+                    <span className="rounded-full bg-white/10 px-4 py-2">
+                      Pipeline Results: blank
+                    </span>
+                  </div>
+
+                  <p className="mt-7 text-xl font-extrabold">
+                    Laboratory upgraded. Return to Lesson 10.
+                  </p>
+
+                  <div className="mt-6">
+                    <Link
+                      href="/lessons/10"
+                      className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 font-bold text-[#205c38] transition hover:-translate-y-0.5 hover:bg-[#f0fff4]"
+                    >
+                      Continue to Lesson 10
+                      <LuArrowRight aria-hidden="true" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ======================================================
             NEXT STEP
         ====================================================== */}
 
