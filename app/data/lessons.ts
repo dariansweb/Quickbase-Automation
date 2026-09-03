@@ -131,22 +131,22 @@ export const lessons: Lesson[] = [
       "Build and execute a Pipeline from a clean definition. Trace a Task mutation through its Trigger and Action, test runtime data availability and field updates, use controlled experiments to prove when the Pipeline runs, and investigate how relationship-derived fields behave when child and parent records change.",
     link: "/lessons/10",
     phase: "Pipeline Foundations",
-    status: "current",
+    status: "complete",
   },
   {
     number: "11",
     title: "Reading the Activity Log",
     description:
-      "Use the Pipeline Activity Log as an experimental instrument for observing workflow execution. Inspect runs, individual steps, inputs, outputs, runtime values, execution order, and errors so future Pipeline behavior can be investigated from evidence rather than assumptions.",
+      "Read the Pipeline Activity Log as runtime evidence. Trace a Pipeline from trigger through completion, connect Ref IDs to executed steps, inspect inputs, targets, outputs, record state, metadata, and timing, and learn how Activity can preserve execution evidence beyond what the current Quickbase record can show.",
     link: "/lessons/11",
     phase: "Pipeline Foundations",
-    status: "planned",
+    status: "complete",
   },
   {
     number: "12",
     title: "Passing Data Through a Pipeline",
     description:
-      "Follow runtime data from one Pipeline step to another and learn how outputs produced by earlier steps become inputs to later steps. Establish the data-flow model needed to understand step references, conditions, queries, actions, and eventually Jinja.",
+      "Follow runtime data from one Pipeline step to another and learn how later steps reference values produced earlier in the run. Connect Activity Log evidence to step references and field mappings, establishing the data-flow model needed for conditions, actions, queries, and eventually Jinja.",
     link: "/lessons/12",
     phase: "Pipeline Data Flow",
     status: "planned",

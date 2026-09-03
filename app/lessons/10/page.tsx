@@ -479,6 +479,12 @@ export default function Lesson10Page() {
                 <LuArrowLeft /> Lesson 9
               </Link>
               <Link
+                href="/lessons/11"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-4 py-3 font-bold hover:bg-white/15"
+              >
+                <LuArrowRight /> Lesson 11
+              </Link>              
+              <Link
                 href="/get-started"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-3 font-bold text-[#205c38] hover:bg-[#f0fff4]"
               >

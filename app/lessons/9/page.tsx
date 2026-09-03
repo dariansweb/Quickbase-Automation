@@ -707,26 +707,24 @@ export default function LessonNinePage() {
             </p>
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#investigation"
-              className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 font-bold text-[#276749]"
+            <Link
+              href="/lessons/8"
+              className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white"
             >
-              <LuSearch />
-              Start the Investigation
-            </a>
+              ← Previous Lesson
+            </Link>
+            <Link
+              href="/lessons/10"
+              className="inline-flex rounded-lg border-2 border-white px-5 py-3 font-bold text-white"
+            >
+              Next Lesson →
+            </Link>{" "}
             <a
               href="#exercises"
               className="inline-flex items-center gap-2 rounded-lg border-2 border-white px-5 py-3 font-bold"
             >
               <LuClipboardList />
               Skip to Exercises
-            </a>
-            <a
-              href="#knowledge-check"
-              className="inline-flex items-center gap-2 rounded-lg border-2 border-white bg-white/10 px-5 py-3 font-bold"
-            >
-              <LuTarget />
-              Jump to Knowledge Check
             </a>
           </div>
         </div>
@@ -1968,12 +1966,6 @@ export default function LessonNinePage() {
               Did the machine actually behave the way our model predicts?
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">
-              <Link
-                href="/lessons/10"
-                className="rounded-lg bg-white px-5 py-3 font-bold text-[#205c38]"
-              >
-                Continue to Lesson 10 →
-              </Link>
               <Link
                 href="/lessons"
                 className="rounded-lg border-2 border-white px-5 py-3 font-bold"

@@ -634,11 +634,11 @@ export default function LessonEightPage() {
               ← Previous Lesson
             </Link>
             <Link
-              href="/lessons"
-              className="rounded-lg bg-white px-5 py-3 font-bold text-[#276749]"
+              href="/lessons/9"
+              className="rounded-lg border-2 border-white px-5 py-3 font-bold"
             >
-              Table of Contents
-            </Link>
+              Next Lesson →
+            </Link>            
             <a
               href="#knowledge-check"
               className="inline-flex items-center gap-2 rounded-lg border-2 border-white bg-white/10 px-5 py-3 font-bold"
