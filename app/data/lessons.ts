@@ -149,16 +149,16 @@ export const lessons: Lesson[] = [
       "Follow a Pipeline as each step receives runtime information, performs work, and makes new outputs available downstream. Trace field values, records, references, and other step outputs through Activity Log evidence while introducing how linked resources can persist beyond a single run.",
     link: "/lessons/12",
     phase: "Pipeline Runtime Data",
-    status: "current",
+    status: "complete",
   },
   {
     number: "13",
-    title: "Conditions, Branches, and Stops",
+    title: "Conditions, Loops, and Branching",
     description:
-      "Carry the Boolean reasoning developed in the Notification lessons into executable workflows. Use conditions to determine whether Pipeline execution continues, follows a branch, takes an alternate path, or stops based on runtime data.",
+      "Move beyond single-record Pipeline logic by searching for multiple matching records, processing each returned item in a Loop, and using Conditions to decide which path each record follows. Learn the difference between filtering a list, evaluating the current Loop item, and applying different actions to different records at runtime.",
     link: "/lessons/13",
     phase: "Pipeline Logic",
-    status: "planned",
+    status: "current",
   },
   {
     number: "14",
