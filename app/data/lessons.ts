@@ -144,12 +144,12 @@ export const lessons: Lesson[] = [
   },
   {
     number: "12",
-    title: "Passing Data Through a Pipeline",
+    title: "How Pipeline Steps Work Together",
     description:
-      "Follow runtime data from one Pipeline step to another and learn how later steps reference values produced earlier in the run. Connect Activity Log evidence to step references and field mappings, establishing the data-flow model needed for conditions, actions, queries, and eventually Jinja.",
+      "Follow a Pipeline as each step receives runtime information, performs work, and makes new outputs available downstream. Trace field values, records, references, and other step outputs through Activity Log evidence while introducing how linked resources can persist beyond a single run.",
     link: "/lessons/12",
-    phase: "Pipeline Data Flow",
-    status: "planned",
+    phase: "Pipeline Runtime Data",
+    status: "current",
   },
   {
     number: "13",
