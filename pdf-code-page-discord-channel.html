@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF Preview</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        font:
+          14px/1.4 -apple-system,
+          "Segoe UI",
+          Roboto,
+          Arial,
+          sans-serif;
+      }
+      #viewer {
+        border: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+      #status {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        text-align: center;
+        padding: 24px;
+        color: #333;
+      }
+      #status.error {
+        color: #b00020;
+      }
+      #status a {
+        color: #0b6bcb;
+      }
+      .spinner {
+        width: 28px;
+        height: 28px;
+        border: 3px solid #d7dce3;
+        border-top-color: #0b6bcb;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #0b6bcb;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .btn:hover {
+        background: #095ba9;
+      }
+      .hint {
+        color: #666;
+        font-size: 13px;
+        max-width: 32em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="status">
+      <div class="spinner"></div>
+      <div id="msg">Loading document…</div>
+    </div>
+    <iframe id="viewer" title="PDF preview"></iframe>
+    <script>
+      /* ============================================================
+      CONFIG — set these two values
+      ============================================================ */
+      var CONFIG = {
+      TABLE_ID : "bXXXXXXXX", // DBID of the table holding the file attachment field
+      FIELD_ID : 14, // Field ID of the File Attachment field
+      VERSION : 0, // 0 = most recent version
+      RID_PARAM: "rid", // URL parameter carrying the record ID
+      REALM : location.hostname // e.g. "yourco.quickbase.com" — auto-detected
+      };
+      /* ============================================================ */
+      var API = "https://api.quickbase.com/v1";
+      var blobUrl = null;
+      var handedOff = false; // set if the blob gets opened in another tab — don't revoke it then
+      function setStatus(html, isError) {
+      var s = document.getElementById("status");
+      s.style.display = "flex";
+      s.className = isError ? "error" : "";
+      s.innerHTML = html;
+      }
+      function fail(html) { setStatus(html, true); }
+      function param(name) {
+      var m = new RegExp("[?&]" + name + "=([^&#]*)", "i").exec(location.search);
+      return m ? decodeURIComponent(m[1].replace(/\+/g, " ")) : null;
+      }
+      // Decode a base64 string into bytes without blowing the call stack on large files.
+      function base64ToBytes(b64) {
+      var clean = b64.replace(/[\r\n\s]/g, "");
+      var bin = atob(clean);
+      var bytes = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      return bytes;
+      }
+      function looksLikePdf(bytes) {
+      return bytes.length > 4 &&
+      bytes[0] === 0x25 && bytes[1] === 0x50 && bytes[2] === 0x44 && bytes[3] === 0x46; // %PDF
+      }
+      function getTempToken(dbid) {
+      return fetch(API + "/auth/temporary/" + encodeURIComponent(dbid), {
+      method: "GET",
+      credentials: "include", // sends the user's Quickbase session cookie
+      headers: { "QB-Realm-Hostname": CONFIG.REALM, "Content-Type": "application/json" }
+      }).then(function (r) {
+      if (!r.ok) throw new Error("Could not get a temporary token (HTTP " + r.status + ").");
+      return r.json();
+      }).then(function (j) {
+      if (!j.temporaryAuthorization) throw new Error("Temporary token response was empty.");
+      return j.temporaryAuthorization;
+      });
+      }
+      function getFileBytes(token, rid) {
+      var url = API + "/files/" + encodeURIComponent(CONFIG.TABLE_ID) +
+      "/" + encodeURIComponent(rid) +
+      "/" + encodeURIComponent(CONFIG.FIELD_ID) +
+      "/" + encodeURIComponent(CONFIG.VERSION);
+      return fetch(url, {
+      method: "GET",
+      headers: {
+      "Authorization": "QB-TEMP-TOKEN " + token,
+      "QB-Realm-Hostname": CONFIG.REALM
+      }
+      }).then(function (r) {
+      if (r.status === 401 || r.status === 403)
+      throw new Error("You don't have permission to view this file.");
+      if (r.status === 404)
+      throw new Error("No file found on record " + rid + " in field " + CONFIG.FIELD_ID + ".");
+      if (!r.ok)
+      throw new Error("Quickbase returned HTTP " + r.status + " when fetching the file.");
+      return r.arrayBuffer();
+      }).then(function (buf) {
+      var raw = new Uint8Array(buf);
+      // The v1 files endpoint returns base64 text; tolerate a raw binary body too.
+      if (looksLikePdf(raw)) return raw;
+      var text = new TextDecoder("utf-8").decode(raw);
+      return base64ToBytes(text);
+      });
+      }
+      function show(bytes) {
+      var blob = new Blob([bytes], { type: "application/pdf" });
+      blobUrl = URL.createObjectURL(blob);
+      var viewer = document.getElementById("viewer");
+      viewer.src = blobUrl;
+      viewer.style.display = "block";
+      document.getElementById("status").style.display = "none";
+      // Some browsers (notably iOS Safari) refuse to render a PDF inside an iframe.
+      setTimeout(function () {
+      var frame = document.getElementById("viewer");
+      var blank = false;
+      try { blank = frame.contentDocument && frame.contentDocument.body &&
+      frame.contentDocument.body.childElementCount === 0; } catch (e) { /* cross-origin:
+      fine */ }
+      if (blank) {
+      frame.style.display = "none";
+      setStatus(
+      '<div>This browser won\'t preview PDFs inline.</div>' +
+      '<a class="btn" id="openBtn" href="' + blobUrl + '" target="_blank" rel="noopener">Open PDF
+      ▸</a>'
+      );
+      var btn = document.getElementById("openBtn");
+      if (btn) btn.addEventListener("click", function () { handedOff = true; });
+      }
+      }, 1500);
+      }
+      window.addEventListener("beforeunload", function () {
+      if (blobUrl && !handedOff) URL.revokeObjectURL(blobUrl);
+      });
+      (function main() {
+      var rid = param(CONFIG.RID_PARAM);
+      if (!rid || !/^\d+$/.test(rid)) {
+      fail("No record ID supplied. This page expects <code>&amp;" +
+      CONFIG.RID_PARAM + "=&lt;record id&gt;</code> in the URL.");
+      return;
+      }
+      if (/^bXXXXXXXX$/.test(CONFIG.TABLE_ID)) {
+      fail("Set <code>CONFIG.TABLE_ID</code> and <code>CONFIG.FIELD_ID</code> at the top of this code
+      page.");
+      return;
+      }
+      getTempToken(CONFIG.TABLE_ID)
+      .then(function (token) { return getFileBytes(token, rid); })
+      .then(show)
+      .catch(function (err) {
+      fail((err && err.message ? err.message : "Something went wrong loading the PDF.") +
+      "<br><br>Make sure you are signed in to Quickbase in this browser.");
+      if (window.console) console.error(err);
+      });
+      })();
+    </script>
+  </body>
+</html>
+Quickb

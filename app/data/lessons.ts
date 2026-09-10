@@ -158,7 +158,7 @@ export const lessons: Lesson[] = [
       "Move beyond single-record Pipeline logic by searching for multiple matching records, processing each returned item in a Loop, and using Conditions to decide which path each record follows. Learn the difference between filtering a list, evaluating the current Loop item, and applying different actions to different records at runtime.",
     link: "/lessons/13",
     phase: "Pipeline Logic",
-    status: "current",
+    status: "complete",
   },
   {
     number: "14",
@@ -167,7 +167,7 @@ export const lessons: Lesson[] = [
       "Learn how Pipelines locate Quickbase records by separating single-record lookups from queries that can return collections. Build controlled searches, inspect their results, and reason about filtering, result size, and the downstream consequences of retrieving multiple records.",
     link: "/lessons/14",
     phase: "Query-Driven Automation",
-    status: "planned",
+    status: "current",
   },
   {
     number: "15",
