@@ -182,7 +182,7 @@ export const lessons: Lesson[] = [
     number: "16",
     title: "Jinja: Referencing Pipeline Data",
     description:
-      "Turn the runtime data model from earlier lessons into explicit Jinja expressions. Learn how Ref IDs, fields, structured values, loop items, metadata, and previous-step outputs are addressed so later steps can retrieve exactly the information they need.",
+      "Turn the runtime-scope model from Lesson 15 into deliberate Jinja expressions. Learn how to reference current items, earlier step outputs, structured values, metadata, and specific fields so later Pipeline steps can retrieve exactly the runtime data they need.",
     link: "/lessons/16",
     phase: "Pipeline Expressions",
     status: "current",
