@@ -173,10 +173,10 @@ export const lessons: Lesson[] = [
     number: "15",
     title: "Advanced Loop Processing and Runtime Scope",
     description:
-      "Build on the list-and-loop model established in Lesson 13 by investigating what happens as each loop iteration becomes more complex. Follow multiple steps within an iteration, inspect loop metadata and runtime references, explore what data is available inside and after a loop, and compare item-by-item processing with other ways of handling collections.",
+      "Explore how runtime scope works inside a Quickbase Pipeline Loop. Follow the current item, earlier step outputs, and loop metadata through the same iteration, and learn why different references can expose different runtime states of the same record before that current-item scope ends.",
     link: "/lessons/15",
     phase: "Advanced Pipeline Logic",
-    status: "planned",
+    status: "complete",
   },
   {
     number: "16",
@@ -185,7 +185,7 @@ export const lessons: Lesson[] = [
       "Turn the runtime data model from earlier lessons into explicit Jinja expressions. Learn how Ref IDs, fields, structured values, loop items, metadata, and previous-step outputs are addressed so later steps can retrieve exactly the information they need.",
     link: "/lessons/16",
     phase: "Pipeline Expressions",
-    status: "planned",
+    status: "current",
   },
   {
     number: "17",
