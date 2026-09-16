@@ -167,7 +167,7 @@ export const lessons: Lesson[] = [
       "Learn how Pipelines locate Quickbase records by separating single-record lookups from queries that can return collections. Build controlled searches, inspect their results, and reason about filtering, result size, and the downstream consequences of retrieving multiple records.",
     link: "/lessons/14",
     phase: "Query-Driven Automation",
-    status: "current",
+    status: "complete",
   },
   {
     number: "15",
