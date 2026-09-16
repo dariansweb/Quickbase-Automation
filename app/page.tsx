@@ -89,53 +89,122 @@ export default function HomePage() {
           HERO
       ====================================================== */}
 
-<header className="relative overflow-hidden border-b border-[#17452a] bg-[#276749] text-white">        <div
+      <header className="relative overflow-hidden border-b border-[#17452a] bg-[#276749] text-white">
+        {/* ==========================================================
+      BACKGROUND ATMOSPHERE
+  ========================================================== */}
+        <div
           aria-hidden="true"
-          className="absolute right-0 top-0 h-96 w-96 rounded-full bg-white/10 blur-3xl"
+          className="absolute -right-20 -top-20 h-[32rem] w-[32rem] rounded-full bg-white/10 blur-3xl"
         />
 
         <div
           aria-hidden="true"
-          className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-[#9fc9ad]/20 blur-3xl"
+          className="absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-[#b7e4c7]/20 blur-3xl"
+        />
+
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 h-px bg-white/20"
         />
 
         <div className="relative mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
           <div className="max-w-5xl">
-            <div className="mb-5 flex flex-wrap items-center gap-3">
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-white/80 sm:text-base">
-                Quickbase Tutorials
-              </p>
+            {/* ========================================================
+          SITE IDENTITY
+      ======================================================== */}
+            <div className="mb-8 flex flex-wrap items-center gap-4">
+              <div className="flex items-center gap-3">
+                <span
+                  aria-hidden="true"
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/30 bg-white text-lg font-black text-[#276749] shadow-lg shadow-black/10"
+                >
+                  E
+                </span>
 
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-white/85">
-                Independent Learning Lab
+                <div>
+                  <p className="text-lg font-extrabold leading-none tracking-tight text-white sm:text-xl">
+                    Quickbase <span className="text-[#d8f3dc]">Explained</span>
+                  </p>
+
+                  <p className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-white/80">
+                    Independent Quickbase Field Study
+                  </p>
+                </div>
+              </div>
+
+              <span className="hidden h-9 w-px bg-white/25 sm:block" />
+
+              <span className="rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.14em] text-white">
+                Automation Developer Lab
               </span>
             </div>
 
-            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
-              Automation Developer Lab
+            {/* ========================================================
+          HERO MESSAGE
+      ======================================================== */}
+            <p className="mb-3 text-sm font-extrabold uppercase tracking-[0.2em] text-[#d8f3dc]">
+              Build it · Test it · Explain it
+            </p>
+
+            <h1 className="max-w-5xl text-4xl font-black leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Don&apos;t just learn Quickbase.
+              <span className="mt-1 block text-[#d8f3dc]">
+                Understand what it&apos;s doing.
+              </span>
             </h1>
 
-            <p className="mt-6 max-w-4xl text-xl leading-9 text-white">
-              Learn Quickbase by building, testing, observing, and explaining
-              what the platform actually does.
+            <p className="mt-7 max-w-4xl text-xl font-medium leading-9 text-white">
+              The Automation Developer Lab investigates Quickbase by building
+              real examples, predicting their behavior, testing the platform,
+              examining the evidence, and explaining why the result happened.
             </p>
 
-            <p className="mt-5 max-w-4xl text-lg leading-8 text-white/90">
-              The lab begins with native communication and record events, then
-              progressively moves into time, state, workflow orchestration, and
-              Pipelines. From there, the lessons follow actual Pipeline
-              execution through triggers, queries, actions, runtime references,
-              collections, conditions, loops, metadata, runtime scope, Jinja,
-              and eventually integration.
+            {/* ========================================================
+          CURRENT JOURNEY
+      ======================================================== */}
+            <div className="mt-8 max-w-4xl border-l-4 border-[#b7e4c7] pl-5">
+              <p className="text-lg leading-8 text-white">
+                The journey begins with native communication and record events,
+                then moves through time, state, workflow orchestration, and
+                Pipelines. From there, we follow actual execution through
+                triggers, queries, actions, runtime references, collections,
+                conditions, loops, metadata, runtime scope, Jinja, and
+                integration.
+              </p>
+            </div>
+
+            {/* ========================================================
+          LAB METHOD / IDENTITY
+      ======================================================== */}
+            <div className="mt-8 grid max-w-4xl gap-3 sm:grid-cols-4">
+              {[
+                ["01", "Predict"],
+                ["02", "Test"],
+                ["03", "Observe"],
+                ["04", "Explain"],
+              ].map(([number, label]) => (
+                <div
+                  key={number}
+                  className="rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur-sm"
+                >
+                  <p className="text-xs font-extrabold tracking-[0.14em] text-[#d8f3dc]">
+                    {number}
+                  </p>
+
+                  <p className="mt-1 font-extrabold text-white">{label}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-5 max-w-4xl text-base font-medium leading-7 text-white/90">
+              Documentation and observed behavior outrank assumptions. When the
+              evidence changes the model, the lesson changes with it.
             </p>
 
-            <p className="mt-4 max-w-4xl text-lg leading-8 text-white/90">
-              Each lesson grows from hands-on research rather than a fixed
-              feature checklist. We predict behavior, test Quickbase, preserve
-              the evidence, and correct the model when the platform teaches us
-              something new.
-            </p>
-
+            {/* ========================================================
+          ACTIONS
+      ======================================================== */}
             <div className="mt-9 flex flex-wrap gap-4">
               <Link
                 href="/get-started"
@@ -147,7 +216,8 @@ export default function HomePage() {
                 />
 
                 <span className="relative flex items-center gap-3">
-                  <span>Build the Automation Lab</span>
+                  <span>Enter the Automation Lab</span>
+
                   <span
                     aria-hidden="true"
                     className="text-2xl transition-transform duration-300 group-hover:translate-x-1.5"
@@ -161,9 +231,9 @@ export default function HomePage() {
                 href="https://github.com/dariansweb/Quickbase-Automation"
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center justify-center gap-3 rounded-2xl border-2 border-white/40 bg-white/10 px-7 py-4 text-lg font-extrabold text-white transition duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-[#205c38]"
+                className="group inline-flex items-center justify-center gap-3 rounded-2xl border-2 border-white/50 bg-white/10 px-7 py-4 text-lg font-extrabold text-white transition duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-[#205c38]"
               >
-                <span>View on GitHub</span>
+                <span>View the Lab on GitHub</span>
 
                 <span
                   aria-hidden="true"
@@ -174,11 +244,31 @@ export default function HomePage() {
               </a>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/70">
+            {/* ========================================================
+          TERRITORY
+      ======================================================== */}
+            <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-semibold text-white/90">
               <span>Native Automation</span>
+              <span aria-hidden="true" className="text-[#b7e4c7]">
+                •
+              </span>
+
               <span>Pipelines</span>
-              <span>REST API + JSON</span>
-              <span>Next.js + TypeScript</span>
+              <span aria-hidden="true" className="text-[#b7e4c7]">
+                •
+              </span>
+
+              <span>Runtime &amp; Jinja</span>
+              <span aria-hidden="true" className="text-[#b7e4c7]">
+                •
+              </span>
+
+              <span>REST API &amp; JSON</span>
+              <span aria-hidden="true" className="text-[#b7e4c7]">
+                •
+              </span>
+
+              <span>Evidence-Based Learning</span>
             </div>
           </div>
         </div>
