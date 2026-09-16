@@ -89,8 +89,7 @@ export default function HomePage() {
           HERO
       ====================================================== */}
 
-      <header className="relative overflow-hidden border-b border-[#17452a] bg-[#276749] text-white">
-        <div
+<header className="relative overflow-hidden border-b border-[#17452a] bg-[#276749] text-white">        <div
           aria-hidden="true"
           className="absolute right-0 top-0 h-96 w-96 rounded-full bg-white/10 blur-3xl"
         />
@@ -123,9 +122,11 @@ export default function HomePage() {
 
             <p className="mt-5 max-w-4xl text-lg leading-8 text-white/90">
               The lab begins with native communication and record events, then
-              progressively moves into conditions, time, state changes, workflow
-              orchestration, Pipelines, runtime data, queries, actions,
-              collections, loops, Jinja, and integration.
+              progressively moves into time, state, workflow orchestration, and
+              Pipelines. From there, the lessons follow actual Pipeline
+              execution through triggers, queries, actions, runtime references,
+              collections, conditions, loops, metadata, runtime scope, Jinja,
+              and eventually integration.
             </p>
 
             <p className="mt-4 max-w-4xl text-lg leading-8 text-white/90">
@@ -471,9 +472,11 @@ export default function HomePage() {
                       </h3>
 
                       <p className="mt-2 leading-7 text-white/85">
-                        The earlier concepts converge into multi-step automation
-                        capable of inspecting data, making decisions, querying
-                        information, and performing actions.
+                        The earlier concepts converge into realm-level workflow
+                        orchestration. Triggers begin execution, steps retrieve
+                        and modify data, references carry runtime values
+                        forward, queries produce collections, and conditions and
+                        loops control how that work continues.
                       </p>
                     </div>
                   </div>
@@ -495,13 +498,14 @@ export default function HomePage() {
           </p>
 
           <h2 className="text-3xl font-bold text-[#205c38] sm:text-4xl">
-            The Major Ideas We Expect to Investigate
+            The Territory This Lab Is Exploring
           </h2>
 
           <p className="mt-5 text-lg leading-8">
-            These are broad areas rather than a frozen list of lessons. The
-            exact curriculum will evolve as actual Quickbase behavior is tested
-            and documented.
+            These are broad areas of study rather than a frozen feature
+            checklist. Some have already produced entire groups of lessons;
+            others remain ahead of us. The curriculum continues to evolve as
+            Quickbase behavior is tested, documented, and better understood.
           </p>
         </div>
 
@@ -552,15 +556,18 @@ export default function HomePage() {
 
           <TopicCard title="Pipelines">
             <p>
-              Triggers, queries, actions, steps, channels, connections,
-              branching, looping, scheduling, and multi-step workflow.
+              Realm-level workflow orchestration, triggers, queries, actions,
+              Channels, Accounts, step references, runtime data, collections,
+              conditions, loops, metadata, scope, execution evidence, and
+              multi-step workflow.
             </p>
           </TopicCard>
 
-          <TopicCard title="Languages & Data">
+          <TopicCard title="Expressions & Data">
             <p>
-              QBL, Jinja, JSON, dynamic values, structured data, relationships,
-              field IDs, table IDs, and records.
+              QBL, Jinja expressions, JSON, field and record identifiers,
+              structured values, runtime references, metadata, and the
+              distinction between business data and execution context.
             </p>
           </TopicCard>
 
@@ -571,10 +578,12 @@ export default function HomePage() {
             </p>
           </TopicCard>
 
-          <TopicCard title="Reliability">
+          <TopicCard title="Runtime Evidence & Reliability">
             <p>
-              Run history, debugging, failures, permissions, missing data,
-              partial execution, bulk events, and scale.
+              Activity Log evidence, step input and output, lifecycle metadata,
+              failures, permissions, missing data, execution history, Replay,
+              bulk behavior, debugging, and the difference between final record
+              state and the complete execution story.
             </p>
           </TopicCard>
 
@@ -883,6 +892,36 @@ export default function HomePage() {
               is often where the most useful lesson begins.
             </p>
           </div>
+          <div className="mt-8 rounded-2xl border border-gray-300 bg-white p-6 sm:p-8">
+            <p className="font-bold uppercase tracking-[0.12em] text-[#276749]">
+              Evidence Matters
+            </p>
+
+            <h3 className="mt-2 text-2xl font-bold text-[#205c38]">
+              Not every conclusion has the same strength.
+            </h3>
+
+            <p className="mt-4 max-w-4xl text-lg leading-8 text-gray-700">
+              Findings throughout the lab are separated into documented
+              behavior, direct observations, reasonable inferences, and
+              speculation. A useful mental model may explain the evidence
+              without pretending that we know undocumented details about
+              Quickbase&apos;s internal implementation.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              {["DOCUMENTED", "OBSERVED", "INFERRED", "SPECULATIVE"].map(
+                (label) => (
+                  <span
+                    key={label}
+                    className="rounded-full border border-[#9fc9ad] bg-[#f0fff4] px-4 py-2 text-sm font-extrabold text-[#205c38]"
+                  >
+                    {label}
+                  </span>
+                ),
+              )}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -933,8 +972,9 @@ export default function HomePage() {
             </h3>
 
             <p className="mt-4 leading-8">
-              Events, time, conditions, state, communication, permissions,
-              queries, actions, workflows, and integrations.
+              Events, time, conditions, state, communication, workflow
+              orchestration, queries, actions, runtime references, collections,
+              loops, metadata, scope, execution evidence, and integrations.
             </p>
           </div>
         </div>
@@ -1120,7 +1160,8 @@ export default function HomePage() {
                   <p className="mt-3 font-bold text-gray-900">Jinja</p>
 
                   <p className="mt-1 text-sm leading-6 text-gray-600">
-                    Express dynamic Pipeline values and logic
+                    Evaluate and transform values available in Pipeline runtime
+                    context
                   </p>
                 </div>
 
@@ -1206,7 +1247,7 @@ export default function HomePage() {
                   <p className="mt-3 font-bold text-[#205c38]">Pipelines</p>
 
                   <p className="mt-1 text-sm leading-6 text-gray-600">
-                    Multi-step workflow orchestration
+                    Multi-step workflow orchestration and runtime execution
                   </p>
                 </div>
 
@@ -1249,45 +1290,47 @@ export default function HomePage() {
           </div>
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            {lessons.map((lesson) => (
-              <Link
-                key={lesson.number}
-                href={lesson.link}
-                className="group block h-full rounded-2xl border border-gray-300 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#276749] hover:shadow-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#276749]/20"
-              >
-                <article className="flex h-full flex-col p-6 sm:p-7">
-                  <div className="flex items-start gap-5">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#276749] text-lg font-extrabold text-white shadow-sm transition group-hover:bg-[#205c38]">
-                      {lesson.number}
+            {lessons
+              .filter((lesson) => lesson.status === "complete")
+              .map((lesson) => (
+                <Link
+                  key={lesson.number}
+                  href={lesson.link}
+                  className="group block h-full rounded-2xl border border-gray-300 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#276749] hover:shadow-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#276749]/20"
+                >
+                  <article className="flex h-full flex-col p-6 sm:p-7">
+                    <div className="flex items-start gap-5">
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#276749] text-lg font-extrabold text-white shadow-sm transition group-hover:bg-[#205c38]">
+                        {lesson.number}
+                      </div>
+
+                      <div>
+                        <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#276749]">
+                          Lesson {lesson.number}
+                        </p>
+
+                        <h3 className="mt-1 text-2xl font-bold leading-tight text-gray-950 group-hover:text-[#276749]">
+                          {lesson.title}
+                        </h3>
+                      </div>
                     </div>
 
-                    <div>
-                      <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#276749]">
-                        Lesson {lesson.number}
-                      </p>
+                    <p className="mt-5 flex-1 leading-7 text-gray-700">
+                      {lesson.description}
+                    </p>
 
-                      <h3 className="mt-1 text-2xl font-bold leading-tight text-gray-950 group-hover:text-[#276749]">
-                        {lesson.title}
-                      </h3>
+                    <div className="mt-6 flex items-center justify-between border-t border-gray-200 pt-5">
+                      <span className="font-bold text-[#276749]">
+                        Open tutorial
+                      </span>
+
+                      <span className="text-2xl font-bold text-[#276749] transition-transform group-hover:translate-x-1">
+                        →
+                      </span>
                     </div>
-                  </div>
-
-                  <p className="mt-5 flex-1 leading-7 text-gray-700">
-                    {lesson.description}
-                  </p>
-
-                  <div className="mt-6 flex items-center justify-between border-t border-gray-200 pt-5">
-                    <span className="font-bold text-[#276749]">
-                      Open tutorial
-                    </span>
-
-                    <span className="text-2xl font-bold text-[#276749] transition-transform group-hover:translate-x-1">
-                      →
-                    </span>
-                  </div>
-                </article>
-              </Link>
-            ))}
+                  </article>
+                </Link>
+              ))}
           </div>
 
           <div className="mt-10 rounded-xl border border-gray-300 bg-white p-6">

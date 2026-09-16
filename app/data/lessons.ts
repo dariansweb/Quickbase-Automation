@@ -180,9 +180,9 @@ export const lessons: Lesson[] = [
   },
   {
     number: "16",
-    title: "Jinja: Referencing Pipeline Data",
+    title: "Jinja, Runtime References, and Scope",
     description:
-      "Turn the runtime-scope model from Lesson 15 into deliberate Jinja expressions. Learn how to reference current items, earlier step outputs, structured values, metadata, and specific fields so later Pipeline steps can retrieve exactly the runtime data they need.",
+      "Investigate how Jinja works with the runtime data Quickbase makes available. Compare native Pipeline references with Jinja expressions, work with current items and earlier step outputs, explore Jinja variables and loops, and test where Jinja scope ends compared with Quickbase Pipeline scope.",
     link: "/lessons/16",
     phase: "Pipeline Expressions",
     status: "current",
@@ -191,7 +191,7 @@ export const lessons: Lesson[] = [
     number: "17",
     title: "Transforming Data With Jinja",
     description:
-      "Move beyond retrieving runtime values and use Jinja to reshape them for downstream work. Combine values, manipulate strings and numbers, apply filters and defaults, handle missing data, and build conditional expressions while tracing every transformed value back to its runtime source.",
+      "Move beyond accessing runtime values and deliberately reshape them for downstream work. Combine and format values, manipulate text and numbers, handle missing data, work with lists and structured values, and use conditional logic while tracing transformed data back to its runtime source.",
     link: "/lessons/17",
     phase: "Pipeline Expressions",
     status: "planned",
@@ -200,7 +200,7 @@ export const lessons: Lesson[] = [
     number: "18",
     title: "Dates, Time, and Scheduling",
     description:
-      "Apply Pipeline expressions to dates and time while investigating timestamps, UTC, application-local time, parsing, formatting, relative date calculations, and scheduled execution. Connect the timing evidence already seen in Activity with deliberate time-driven workflow design.",
+      "Investigate how Pipelines represent and evaluate time. Work with timestamps, UTC, application-local time, parsing, formatting, relative date calculations, and scheduled execution while connecting time-based expressions to the runtime evidence recorded in Activity.",
     link: "/lessons/18",
     phase: "Pipeline Expressions",
     status: "planned",
@@ -209,7 +209,7 @@ export const lessons: Lesson[] = [
     number: "19",
     title: "Controlled Record Mutations",
     description:
-      "Move beyond simply knowing how to use Create Record and Update Record and study how Pipeline-driven mutations should be designed. Examine field mappings, execution identity, permissions, before-and-after record state, data integrity, execution order, and the new events created when a Pipeline changes Quickbase data.",
+      "Study what happens when a Pipeline deliberately changes Quickbase data. Examine the values sent to record actions, the resulting record state, execution identity and permissions, execution order, and the runtime evidence produced when Pipeline actions create or update records.",
     link: "/lessons/19",
     phase: "Workflow Automation",
     status: "planned",
@@ -218,7 +218,7 @@ export const lessons: Lesson[] = [
     number: "20",
     title: "Secondary Events and Automation Loops",
     description:
-      "Investigate what happens after a Pipeline mutation creates another Quickbase event. Determine when Pipeline-driven changes can trigger additional automation, trace self-triggering and cross-workflow execution, and develop controlled strategies for preventing unintended repeated or recursive processing.",
+      "Investigate what happens when a Pipeline-driven data change becomes another automation event. Trace secondary execution, distinguish intentional workflow chains from unintended repeated processing, and develop evidence-based strategies for controlling automation loops.",
     link: "/lessons/20",
     phase: "Workflow Automation",
     status: "planned",
@@ -227,7 +227,7 @@ export const lessons: Lesson[] = [
     number: "21",
     title: "Relationships and Cross-Record Workflows",
     description:
-      "Extend automation across related Quickbase data by following reference fields, lookups, parent records, and child records through real workflows. Query and act on connected records while separating native Quickbase relationships from Pipeline linking mechanisms such as Linked Items.",
+      "Extend Pipeline logic across connected Quickbase records. Investigate how relationships, reference fields, lookups, parent and child records, searches, and record lookups affect cross-record automation while distinguishing Quickbase table relationships from Pipeline-specific linking mechanisms.",
     link: "/lessons/21",
     phase: "Workflow Automation",
     status: "planned",
@@ -236,7 +236,7 @@ export const lessons: Lesson[] = [
     number: "22",
     title: "Reliable Pipeline Engineering",
     description:
-      "Bring the complete Pipeline execution model together and learn how to engineer automation that remains understandable and dependable over time. Investigate failures, retries, permissions, duplicate execution, schema changes, bulk and background processing, accounts, YAML, Connection Central, Activity evidence, observability, maintenance, and systematic troubleshooting.",
+      "Bring the Pipeline execution model together and apply it to dependable automation design. Use Activity evidence to investigate failures, retries, permissions, duplicate execution, changing schemas, performance, maintenance, and systematic troubleshooting while identifying the tools and practices needed for long-term Pipeline reliability.",
     link: "/lessons/22",
     phase: "Automation Engineering",
     status: "planned",
