@@ -185,7 +185,7 @@ export const lessons: Lesson[] = [
       "Investigate how Jinja works with the runtime data Quickbase makes available. Compare native Pipeline references with Jinja expressions, work with current items and earlier step outputs, explore Jinja variables and loops, and test where Jinja scope ends compared with Quickbase Pipeline scope.",
     link: "/lessons/16",
     phase: "Pipeline Expressions",
-    status: "current",
+    status: "complete",
   },
   {
     number: "17",
@@ -194,7 +194,7 @@ export const lessons: Lesson[] = [
       "Move beyond accessing runtime values and deliberately reshape them for downstream work. Combine and format values, manipulate text and numbers, handle missing data, work with lists and structured values, and use conditional logic while tracing transformed data back to its runtime source.",
     link: "/lessons/17",
     phase: "Pipeline Expressions",
-    status: "planned",
+    status: "current",
   },
   {
     number: "18",
