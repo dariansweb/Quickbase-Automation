@@ -319,106 +319,500 @@ export default function Lesson17Page() {
             </a>
           </div>
         </div>
-        <div className="mx-auto max-w-6xl px-6 py-10 lg:px-8">
-          <div className="rounded-3xl border border-[#9fc9ad] bg-white p-6 shadow-sm sm:p-8">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#276749] text-white">
-                <LuTableProperties className="h-6 w-6" aria-hidden="true" />
+      </header>
+
+      <div className="mx-auto max-w-6xl space-y-20 px-6 py-4 lg:px-8">
+        <section>
+          <div className="mx-auto max-w-6xl px-6 py-12 lg:px-8 lg:py-14">
+            <div className="mb-10 max-w-4xl">
+              <p className="font-extrabold uppercase tracking-[0.14em] text-[#276749]">
+                Before We Begin
+              </p>
+
+              <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-[#17452a] sm:text-4xl">
+                Build the Lesson 17 Laboratory
+              </h2>
+
+              <p className="mt-5 text-lg leading-8 text-gray-700">
+                Lesson 17 starts with a brand-new Tasks table and a brand-new
+                Pipeline. We are intentionally leaving the Lesson 16 laboratory
+                untouched so its results remain available as evidence and
+                reference.
+              </p>
+
+              <p className="mt-4 text-lg leading-8 text-gray-700">
+                If you are joining the Automation Developer Lab here, this is
+                also a good place to begin. The{" "}
+                <Link
+                  href="/get-started"
+                  className="font-bold text-[#276749] underline decoration-2 underline-offset-4"
+                >
+                  Get Started
+                </Link>{" "}
+                page covers the basic Quickbase app and Tasks-table setup
+                assumed by this lesson.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {/* STEP 1 */}
+              <div className="rounded-3xl border border-[#cfe3d5] bg-[#f7faf8] p-6 sm:p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#276749] font-extrabold text-white">
+                    1
+                  </div>
+
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-extrabold text-[#17452a]">
+                      Create the Fresh Tasks Table
+                    </h3>
+
+                    <p className="mt-4 leading-7 text-gray-700">
+                      Import the <strong>Lesson 17 Tasks CSV</strong> into
+                      Quickbase as a new Tasks table.
+                    </p>
+
+                    <p className="mt-3 leading-7 text-gray-700">
+                      This dataset intentionally contains values that will
+                      become useful later in the lesson: mixed capitalization,
+                      extra spaces, punctuation, blank values, comma-separated
+                      tags, and other variations.{" "}
+                      <strong>Do not clean them up.</strong> They are part of
+                      our laboratory.
+                    </p>
+
+                    <div className="mt-5">
+                      <a
+                        href="../..//downloads/Lesson_17_Tasks.csv"
+                        download
+                        className="inline-flex items-center gap-2 rounded-lg bg-[#276749] px-5 py-3 font-bold text-white hover:bg-[#205c38]"
+                      >
+                        <LuDownload className="h-5 w-5" aria-hidden="true" />
+                        Download Lesson 17 Tasks
+                      </a>
+                    </div>
+
+                    <div className="mt-6 overflow-x-auto rounded-2xl border border-gray-200 bg-white">
+                      <table className="min-w-full text-left">
+                        <thead className="bg-[#e6f4ea] text-[#17452a]">
+                          <tr>
+                            <th className="p-4 font-extrabold">Field</th>
+                            <th className="p-4 font-extrabold">Type</th>
+                            <th className="p-4 font-extrabold">
+                              Why We Need It
+                            </th>
+                          </tr>
+                        </thead>
+
+                        <tbody className="divide-y divide-gray-200">
+                          {[
+                            [
+                              "Task Name",
+                              "Text",
+                              "Primary text-transformation source",
+                            ],
+                            [
+                              "Status",
+                              "Text – Multiple Choice",
+                              "Familiar business data",
+                            ],
+                            ["Due Date", "Date", "Available runtime data"],
+                            [
+                              "Assigned To",
+                              "User",
+                              "Structured-value experiments",
+                            ],
+                            ["Notes", "Text", "Blank-value experiments"],
+                            [
+                              "Task Tags",
+                              "Text",
+                              "Text-to-list and Jinja loop experiments",
+                            ],
+                            [
+                              "Pipeline Results",
+                              "Text",
+                              "Where our transformations will be written",
+                            ],
+                            [
+                              "Pipeline Jinja",
+                              "Text",
+                              "Available workspace/output field",
+                            ],
+                            [
+                              "Estimated Hours",
+                              "Numeric",
+                              "Numeric, blank, and zero experiments",
+                            ],
+                          ].map((row) => (
+                            <tr key={row[0]}>
+                              {row.map((cell, cellIndex) => (
+                                <td
+                                  key={`${row[0]}-${cellIndex}`}
+                                  className="p-4 align-top text-sm leading-6 text-gray-700"
+                                >
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+                      <p className="font-extrabold text-amber-950">
+                        Estimated Hours is especially important.
+                      </p>
+
+                      <p className="mt-2 leading-7 text-amber-900">
+                        If it was not created during import, add it manually as
+                        a <strong>Numeric</strong> field. Later we will
+                        deliberately compare a blank Estimated Hours value with
+                        a legitimate value of <code>0</code>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="flex-1">
-                <p className="font-extrabold uppercase tracking-[0.14em] text-[#276749]">
-                  A Fresh Starting Point
-                </p>
-
-                <h2 className="mt-2 text-2xl font-extrabold text-[#17452a] sm:text-3xl">
-                  Lesson 17 starts with a brand-new Tasks table.
-                </h2>
-
-                <p className="mt-4 max-w-4xl text-lg leading-8 text-gray-700">
-                  Up to this point, our original Tasks table has traveled with
-                  us through notifications, Pipeline triggers, searches, loops,
-                  conditions, runtime references, and Jinja experiments. For
-                  this lesson, we&apos;re starting fresh.
-                </p>
-
-                <p className="mt-4 max-w-4xl leading-7 text-gray-700">
-                  The Lesson 17 dataset creates a new Tasks table with fresh
-                  records and additional fields designed specifically for
-                  transformation experiments. The unusual capitalization,
-                  repeated spaces, blank values, numbers, and comma-separated
-                  tags are intentional. They give Jinja real problems to solve.
-                </p>
-
-                <div className="mt-6 grid gap-4 md:grid-cols-3">
-                  <div className="rounded-2xl border border-[#cfe3d5] bg-[#f7faf8] p-5">
-                    <p className="font-extrabold text-[#205c38]">
-                      Starting the Lab Here?
-                    </p>
-                    <p className="mt-2 text-sm leading-6 text-gray-600">
-                      That&apos;s perfectly fine. You do not need the Tasks
-                      table used throughout the earlier Automation lessons to
-                      begin Lesson 17.
-                    </p>
+              {/* STEP 2 */}
+              <div className="rounded-3xl border border-[#cfe3d5] bg-white p-6 shadow-sm sm:p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#276749] font-extrabold text-white">
+                    2
                   </div>
 
-                  <div className="rounded-2xl border border-[#cfe3d5] bg-[#f7faf8] p-5">
-                    <p className="font-extrabold text-[#205c38]">
-                      Build the Foundation
-                    </p>
-                    <p className="mt-2 text-sm leading-6 text-gray-600">
-                      The Get Started page covers the basic Quickbase app and
-                      Tasks-table setup this lab assumes. Use it first if
-                      you&apos;re joining the course here.
-                    </p>
-                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-extrabold text-[#17452a]">
+                      Create a Brand-New Pipeline
+                    </h3>
 
-                  <div className="rounded-2xl border border-[#cfe3d5] bg-[#f7faf8] p-5">
-                    <p className="font-extrabold text-[#205c38]">
-                      Then Import Fresh Data
+                    <p className="mt-4 leading-7 text-gray-700">
+                      Go to <strong>Pipelines</strong> and create a new Pipeline
+                      named:
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-gray-600">
-                      Import the Lesson 17 CSV into a new Tasks table so your
-                      records match the examples and controlled test conditions
-                      used throughout this lesson.
+
+                    <div className="mt-4 rounded-xl border border-[#b8d9c3] bg-[#f0fff4] px-5 py-4">
+                      <p className="font-mono font-bold text-[#17452a]">
+                        Lesson 17 - Transforming Data With Jinja
+                      </p>
+                    </div>
+
+                    <p className="mt-4 leading-7 text-gray-700">
+                      We are starting fresh intentionally. The Pipeline becomes
+                      part of the Lesson 17 laboratory record rather than
+                      altering the work preserved from Lesson 16.
                     </p>
                   </div>
                 </div>
+              </div>
 
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Link
-                    href="/get-started"
-                    className="inline-flex items-center gap-2 rounded-lg bg-[#276749] px-5 py-3 font-bold text-white hover:bg-[#205c38]"
-                  >
-                    <LuBookOpen className="h-5 w-5" aria-hidden="true" />
-                    Get Started
-                  </Link>
+              {/* STEP 3 */}
+              <div className="rounded-3xl border border-[#cfe3d5] bg-[#f7faf8] p-6 sm:p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#276749] font-extrabold text-white">
+                    3
+                  </div>
 
-                  <a
-                    href="../../../downloads/Lesson_17_Tasks.csv"
-                    download
-                    className="inline-flex items-center gap-2 rounded-lg border-2 border-[#276749] bg-white px-5 py-3 font-bold text-[#276749] hover:bg-[#f0fff4]"
-                  >
-                    <LuDownload className="h-5 w-5" aria-hidden="true" />
-                    Download Lesson 17 Tasks
-                  </a>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-extrabold text-[#17452a]">
+                      Add the Quickbase Search Records Step
+                    </h3>
+
+                    <p className="mt-4 leading-7 text-gray-700">
+                      Add a Quickbase <strong>Search Records</strong> step and
+                      configure it to search the new Tasks table.
+                    </p>
+
+                    <p className="mt-3 leading-7 text-gray-700">
+                      This becomes our first step:
+                    </p>
+
+                    <div className="mt-4 max-w-md rounded-2xl border border-gray-200 bg-slate-950 p-5">
+                      <code className="whitespace-pre font-mono text-sm leading-7 text-slate-100">
+                        {`Step 1
+Search Records
+Reference ID: aa`}
+                      </code>
+                    </div>
+
+                    <p className="mt-4 leading-7 text-gray-700">
+                      For this laboratory, the Search should return our Lesson
+                      17 Tasks so Quickbase can process them through the Loop it
+                      creates for the returned list.
+                    </p>
+                  </div>
                 </div>
+              </div>
 
-                <div className="mt-6 rounded-xl border-l-4 border-[#276749] bg-[#f0fff4] px-5 py-4">
-                  <p className="font-bold leading-7 text-[#17452a]">
-                    Think of Lesson 17 as a new laboratory bench: the earlier
-                    lessons explain how we got here, but this fresh table gives
-                    new learners a clean place to begin working with Pipeline
-                    runtime data and Jinja.
+              {/* STEP 4 */}
+              <div className="rounded-3xl border border-[#cfe3d5] bg-white p-6 shadow-sm sm:p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#276749] font-extrabold text-white">
+                    4
+                  </div>
+
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-extrabold text-[#17452a]">
+                      Make the Fields Available to Later Steps
+                    </h3>
+
+                    <p className="mt-4 leading-7 text-gray-700">
+                      In the Search Records configuration, use{" "}
+                      <strong>Fields for subsequent steps</strong> to bring
+                      forward the fields our later Jinja expressions will need.
+                    </p>
+
+                    <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                      {[
+                        "Task Name",
+                        "Status",
+                        "Due Date",
+                        "Assigned To",
+                        "Notes",
+                        "Task Tags",
+                        "Pipeline Results",
+                        "Pipeline Jinja",
+                        "Estimated Hours",
+                      ].map((field) => (
+                        <div
+                          key={field}
+                          className="rounded-xl border border-[#cfe3d5] bg-[#f0fff4] px-4 py-3 font-bold text-[#205c38]"
+                        >
+                          {field}
+                        </div>
+                      ))}
+                    </div>
+
+                    <p className="mt-5 leading-7 text-gray-700">
+                      If your Lesson 17 Tasks table also contains existing
+                      relationship fields, they can remain available, but they
+                      are not the focus of this lesson.
+                    </p>
+
+                    <div className="mt-6 rounded-2xl border border-blue-200 bg-blue-50 p-5">
+                      <p className="font-extrabold text-blue-950">
+                        Why are we doing this?
+                      </p>
+
+                      <p className="mt-2 leading-7 text-blue-900">
+                        Jinja cannot magically reach into any field we happen to
+                        think about later. Our expressions operate on the
+                        runtime data Quickbase makes available to the step.
+                        Selecting the fields needed by subsequent steps prepares
+                        the runtime data our Lesson 17 transformations will use.
+                      </p>
+
+                      <p className="mt-3 font-bold leading-7 text-blue-950">
+                        As we learned in Lesson 16, before we can transform a
+                        value, that value must first be available in the runtime
+                        context.
+                      </p>
+                    </div>
+
+                    <p className="mt-4 leading-7 text-gray-700">
+                      We are not reteaching runtime scope here. We are applying
+                      it.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* STEP 5 */}
+              <div className="rounded-3xl border border-[#cfe3d5] bg-[#f7faf8] p-6 sm:p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#276749] font-extrabold text-white">
+                    5
+                  </div>
+
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-extrabold text-[#17452a]">
+                      Add the Update Record Step
+                    </h3>
+
+                    <p className="mt-4 leading-7 text-gray-700">
+                      Add a Quickbase <strong>Update Record</strong> action
+                      after Search Records. Quickbase will place the action in
+                      the processing flow for the records returned by Search
+                      Records.
+                    </p>
+
+                    <p className="mt-3 leading-7 text-gray-700">
+                      Configure it to update the{" "}
+                      <strong>current Tasks record</strong> from the Search
+                      step.
+                    </p>
+
+                    <div className="mt-6 grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">
+                      <div className="rounded-2xl border border-[#b8d9c3] bg-white p-5 text-center shadow-sm">
+                        <p className="font-extrabold text-[#205c38]">
+                          Search Records
+                        </p>
+                        <p className="mt-1 font-mono text-sm text-gray-500">
+                          aa
+                        </p>
+                      </div>
+
+                      <LuArrowDown className="mx-auto h-6 w-6 text-[#276749] md:-rotate-90" />
+
+                      <div className="rounded-2xl border border-[#b8d9c3] bg-white p-5 text-center shadow-sm">
+                        <p className="font-extrabold text-[#205c38]">
+                          Quickbase Loop
+                        </p>
+                        <p className="mt-1 text-sm text-gray-500">
+                          Current Tasks record
+                        </p>
+                      </div>
+
+                      <LuArrowDown className="mx-auto h-6 w-6 text-[#276749] md:-rotate-90" />
+
+                      <div className="rounded-2xl border border-[#b8d9c3] bg-white p-5 text-center shadow-sm">
+                        <p className="font-extrabold text-[#205c38]">
+                          Update Record
+                        </p>
+                        <p className="mt-1 font-mono text-sm text-gray-500">
+                          ab
+                        </p>
+                      </div>
+                    </div>
+
+                    <p className="mt-5 leading-7 text-gray-700">
+                      Choose <strong>Pipeline Results</strong> as the field we
+                      will update.
+                    </p>
+
+                    <p className="mt-3 leading-7 text-gray-700">
+                      This field becomes our laboratory output surface. Most of
+                      the Jinja in this lesson will read runtime values from{" "}
+                      <code>aa</code>, transform them, and write the resulting
+                      value into <strong>Pipeline Results</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* STEP 6 */}
+              <div className="rounded-3xl border border-[#cfe3d5] bg-white p-6 shadow-sm sm:p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#276749] font-extrabold text-white">
+                    6
+                  </div>
+
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-extrabold text-[#17452a]">
+                      Switch Pipeline Results to Jinja
+                    </h3>
+
+                    <p className="mt-4 leading-7 text-gray-700">
+                      In the value for <strong>Pipeline Results</strong>, open
+                      the Jinja editor.
+                    </p>
+
+                    <p className="mt-3 leading-7 text-gray-700">
+                      Our basic pattern throughout the lesson will be:
+                    </p>
+
+                    <div className="mt-6">
+                      <div className="grid gap-3 md:grid-cols-5 md:items-center">
+                        {[
+                          "Quickbase field",
+                          "Search Records (aa)",
+                          "Runtime reference",
+                          "Jinja transformation",
+                          "Update Record (ab)",
+                        ].map((item, index) => (
+                          <div key={item} className="contents">
+                            <div className="rounded-2xl border border-[#b8d9c3] bg-[#f0fff4] p-4 text-center font-bold text-[#205c38]">
+                              {item}
+                            </div>
+
+                            {index < 4 && (
+                              <LuArrowDown className="mx-auto h-5 w-5 text-[#276749] md:hidden" />
+                            )}
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-3 rounded-xl border border-[#b8d9c3] bg-white px-5 py-4 text-center font-bold text-[#17452a]">
+                        Result → Pipeline Results
+                      </div>
+                    </div>
+
+                    <p className="mt-5 leading-7 text-gray-700">
+                      Our first transformation will eventually be as simple as:
+                    </p>
+
+                    <div className="mt-4 max-w-lg rounded-2xl border border-slate-700 bg-slate-950 p-5">
+                      <code className="font-mono text-sm text-slate-100">
+                        {"{{ aa.task_name | upper }}"}
+                      </code>
+                    </div>
+
+                    <p className="mt-4 font-bold text-[#205c38]">
+                      But don&apos;t run ahead yet.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* READY CHECK */}
+            <div className="mt-10 rounded-3xl border-2 border-[#9fc9ad] bg-[#f0fff4] p-6 sm:p-8">
+              <div className="flex items-start gap-4">
+                <LuCircleCheck
+                  className="mt-1 h-8 w-8 shrink-0 text-[#276749]"
+                  aria-hidden="true"
+                />
+
+                <div className="flex-1">
+                  <p className="font-extrabold uppercase tracking-[0.14em] text-[#276749]">
+                    Before We Begin
                   </p>
+
+                  <h3 className="mt-2 text-2xl font-extrabold text-[#17452a]">
+                    Your Lesson 17 laboratory should now be ready.
+                  </h3>
+
+                  <div className="mt-5 grid gap-3 md:grid-cols-2">
+                    {[
+                      "Fresh Lesson 17 Tasks data",
+                      "Estimated Hours Numeric field",
+                      "Task Tags Text field",
+                      "Pipeline Results Text field",
+                      "Pipeline Jinja Text field",
+                      "Lesson 17 - Transforming Data With Jinja Pipeline",
+                      "aa — Search Records",
+                      "ab — Update Record → Pipeline Results",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="flex items-center gap-3 rounded-xl border border-[#cfe3d5] bg-white px-4 py-3"
+                      >
+                        <LuCircleCheck
+                          className="h-5 w-5 shrink-0 text-[#276749]"
+                          aria-hidden="true"
+                        />
+                        <span className="font-bold text-gray-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-7 rounded-2xl border-l-4 border-[#276749] bg-white p-5">
+                    <p className="font-extrabold leading-7 text-[#17452a]">
+                      Lesson 16 answered: “Where does Jinja get its data?”
+                    </p>
+
+                    <p className="mt-2 font-extrabold leading-7 text-[#276749]">
+                      Lesson 17 begins with that answer already in place and
+                      asks the next question: “Now that Jinja has the data, what
+                      can we turn it into?”
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </header>
-
-      <div className="mx-auto max-w-6xl space-y-20 px-6 py-14 lg:px-8">
+        </section>
         <section>
           <Heading
             eyebrow="Mental model"
@@ -469,7 +863,6 @@ export default function Lesson17Page() {
             </div>
           </div>
         </section>
-
         <section>
           <Heading
             eyebrow="Lesson 17 laboratory"
@@ -514,7 +907,6 @@ export default function Lesson17Page() {
             not been tested very hard.
           </p>
         </section>
-
         <section>
           <Heading
             eyebrow="Start gently"
@@ -548,7 +940,6 @@ export default function Lesson17Page() {
             </p>
           </div>
         </section>
-
         <section>
           <Heading
             eyebrow="Chaining"
