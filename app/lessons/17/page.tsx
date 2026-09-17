@@ -311,7 +311,7 @@ export default function Lesson17Page() {
             </Link>
 
             <a
-              href="Lesson_17_Tasks_Public.csv"
+              href="public/Lesson_17_Tasks_Public.csv"
               download
               className="inline-flex items-center gap-2 rounded-lg border-2 border-white bg-white/10 px-5 py-3 font-bold text-white hover:bg-white/20"
             >
