@@ -395,7 +395,7 @@ export default function Lesson17Page() {
                   </Link>
 
                   <a
-                    href="/downloads/Lesson_17_Tasks_Public.csv"
+                    href="../../../downloads/Lesson_17_Tasks_Public.csv"
                     download
                     className="inline-flex items-center gap-2 rounded-lg border-2 border-[#276749] bg-white px-5 py-3 font-bold text-[#276749] hover:bg-[#f0fff4]"
                   >
