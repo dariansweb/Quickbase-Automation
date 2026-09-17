@@ -7,6 +7,7 @@ import {
   LuBadgeCheck,
   LuBookOpen,
   LuBraces,
+  LuTableProperties,
   LuCircleAlert,
   LuDownload,
   LuCircleCheck,
@@ -309,16 +310,6 @@ export default function Lesson17Page() {
             >
               Table of Contents
             </Link>
-
-            <a
-              href="../../downloads/Lesson_17_Tasks.csv"
-              download
-              className="inline-flex items-center gap-2 rounded-lg border-2 border-white bg-white/10 px-5 py-3 font-bold text-white hover:bg-white/20"
-            >
-              <LuDownload className="h-5 w-5" aria-hidden="true" />
-              Download Lab Data
-            </a>
-
             <a
               href="#quiz"
               className="inline-flex items-center gap-2 rounded-lg border-2 border-white bg-white/10 px-5 py-3 font-bold text-white hover:bg-white/20"
@@ -326,6 +317,103 @@ export default function Lesson17Page() {
               <LuBookOpen className="h-5 w-5" aria-hidden="true" />
               Skip to Quiz
             </a>
+          </div>
+        </div>
+        <div className="mx-auto max-w-6xl px-6 py-10 lg:px-8">
+          <div className="rounded-3xl border border-[#9fc9ad] bg-white p-6 shadow-sm sm:p-8">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#276749] text-white">
+                <LuTableProperties className="h-6 w-6" aria-hidden="true" />
+              </div>
+
+              <div className="flex-1">
+                <p className="font-extrabold uppercase tracking-[0.14em] text-[#276749]">
+                  A Fresh Starting Point
+                </p>
+
+                <h2 className="mt-2 text-2xl font-extrabold text-[#17452a] sm:text-3xl">
+                  Lesson 17 starts with a brand-new Tasks table.
+                </h2>
+
+                <p className="mt-4 max-w-4xl text-lg leading-8 text-gray-700">
+                  Up to this point, our original Tasks table has traveled with
+                  us through notifications, Pipeline triggers, searches, loops,
+                  conditions, runtime references, and Jinja experiments. For
+                  this lesson, we&apos;re starting fresh.
+                </p>
+
+                <p className="mt-4 max-w-4xl leading-7 text-gray-700">
+                  The Lesson 17 dataset creates a new Tasks table with fresh
+                  records and additional fields designed specifically for
+                  transformation experiments. The unusual capitalization,
+                  repeated spaces, blank values, numbers, and comma-separated
+                  tags are intentional. They give Jinja real problems to solve.
+                </p>
+
+                <div className="mt-6 grid gap-4 md:grid-cols-3">
+                  <div className="rounded-2xl border border-[#cfe3d5] bg-[#f7faf8] p-5">
+                    <p className="font-extrabold text-[#205c38]">
+                      Starting the Lab Here?
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-gray-600">
+                      That&apos;s perfectly fine. You do not need the Tasks
+                      table used throughout the earlier Automation lessons to
+                      begin Lesson 17.
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-[#cfe3d5] bg-[#f7faf8] p-5">
+                    <p className="font-extrabold text-[#205c38]">
+                      Build the Foundation
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-gray-600">
+                      The Get Started page covers the basic Quickbase app and
+                      Tasks-table setup this lab assumes. Use it first if
+                      you&apos;re joining the course here.
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-[#cfe3d5] bg-[#f7faf8] p-5">
+                    <p className="font-extrabold text-[#205c38]">
+                      Then Import Fresh Data
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-gray-600">
+                      Import the Lesson 17 CSV into a new Tasks table so your
+                      records match the examples and controlled test conditions
+                      used throughout this lesson.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link
+                    href="/get-started"
+                    className="inline-flex items-center gap-2 rounded-lg bg-[#276749] px-5 py-3 font-bold text-white hover:bg-[#205c38]"
+                  >
+                    <LuBookOpen className="h-5 w-5" aria-hidden="true" />
+                    Get Started
+                  </Link>
+
+                  <a
+                    href="/downloads/Lesson_17_Tasks_Public.csv"
+                    download
+                    className="inline-flex items-center gap-2 rounded-lg border-2 border-[#276749] bg-white px-5 py-3 font-bold text-[#276749] hover:bg-[#f0fff4]"
+                  >
+                    <LuDownload className="h-5 w-5" aria-hidden="true" />
+                    Download Lesson 17 Tasks
+                  </a>
+                </div>
+
+                <div className="mt-6 rounded-xl border-l-4 border-[#276749] bg-[#f0fff4] px-5 py-4">
+                  <p className="font-bold leading-7 text-[#17452a]">
+                    Think of Lesson 17 as a new laboratory bench: the earlier
+                    lessons explain how we got here, but this fresh table gives
+                    new learners a clean place to begin working with Pipeline
+                    runtime data and Jinja.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>
