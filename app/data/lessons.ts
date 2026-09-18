@@ -191,7 +191,7 @@ export const lessons: Lesson[] = [
     number: "17",
     title: "Transforming Data With Jinja",
     description:
-      "Move beyond accessing runtime values and deliberately reshape them for downstream work. Combine and format values, manipulate text and numbers, handle missing data, work with lists and structured values, and use conditional logic while tracing transformed data back to its runtime source.",
+      "Move beyond accessing runtime values and deliberately reshape them for downstream work. Normalize and format values, handle missing data, work with structured values and collections, iterate through lists, make conditional decisions, and preserve state across Jinja loop iterations while tracing every transformation back to its runtime source.",
     link: "/lessons/17",
     phase: "Pipeline Expressions",
     status: "current",
@@ -200,10 +200,10 @@ export const lessons: Lesson[] = [
     number: "18",
     title: "Dates, Time, and Scheduling",
     description:
-      "Investigate how Pipelines represent and evaluate time. Work with timestamps, UTC, application-local time, parsing, formatting, relative date calculations, and scheduled execution while connecting time-based expressions to the runtime evidence recorded in Activity.",
+      "Investigate what time actually means inside a Pipeline. Trace dates and timestamps from Quickbase fields into runtime data, distinguish UTC from application-local time and displayed time, then test parsing, formatting, relative calculations, and scheduled execution against the evidence recorded in Activity.",
     link: "/lessons/18",
     phase: "Pipeline Expressions",
-    status: "planned",
+    status: "current",
   },
   {
     number: "19",
