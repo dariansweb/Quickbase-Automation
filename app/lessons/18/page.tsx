@@ -950,9 +950,10 @@ export default function Lesson18Page() {
             Activity expanded a Date/Time with properties such as{" "}
             <code>time</code> and <code>iso</code>. We predicted that{" "}
             <code>.time</code> might therefore be a numeric value available to
-            Jinja. If that were true, we could subtract the two values,
+            Jinja. 
+            <p>If that were true, we could subtract the two values,
             calculate an elapsed duration, and then test our three-hour business
-            rule.
+            rule.</p>
           </p>
 
           <div className="mt-5 rounded-xl border border-red-200 bg-white p-5">
